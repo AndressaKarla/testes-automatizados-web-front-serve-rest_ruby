@@ -28,18 +28,8 @@ jobs:
         
       - name: Passo 3 - Executar testes no navegador chrome em modo headless (2º plano) em um ambiente de desenvolvimento e Gerar os resultados dos testes
         run: bundle exec cucumber -p ci
-            
-      - name: Passo 4 - Armazenar os resultados dos testes em screenshots
-        uses: actions/upload-artifact@v3
-        # expressão condicional para que sempre seja executado independentemente dos resultados dos steps anteriores
-        if: ${{ always() }}
-        with: 
-            name: screenshots_chrome
-            path: ./relatorios/screenshots
-            # armazena o relatório html por 30 dias
-            retention-days: 30
 
-      - name: Passo 5 - Armazenar os resultados dos testes em relatório html
+      - name: Passo 4 - Armazenar os resultados dos testes em relatório html
         uses: actions/upload-artifact@v3
         # expressão condicional para que sempre seja executado independentemente dos resultados dos steps anteriores
         if: ${{ always() }}
@@ -48,4 +38,15 @@ jobs:
             path: ./relatorios/relatorio.html
             # armazena o relatório html por 30 dias
             retention-days: 30
+            
+      - name: Passo 5 - Armazenar os resultados dos testes em screenshots
+        uses: actions/upload-artifact@v3
+        if: ${{ always() }}
+        with: 
+            name: screenshots_chrome
+            path: ./relatorios/screenshots
+            # armazena os screenshots por 30 dias
+            retention-days: 30
+
+
             
