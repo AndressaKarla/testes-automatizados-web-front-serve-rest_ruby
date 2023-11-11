@@ -1,5 +1,5 @@
 ---
-# :test_tube: Projeto de Testes Automatizados Web | Ruby | Cucumber | Capybara | SitePrism | GitHb Actions :test_tube:
+# :test_tube: Projeto de Testes Automatizados Web | Ruby | Cucumber | Capybara | SitePrism | Rspec | HTTParty | GitHub Actions :test_tube:
 ---
 # :information_source: Introdução
 - Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um ambiente de desenvolvimento no ["front"](https://front.serverest.dev) e na ["API REST"](https://serverest.dev) do ["ServeRest"](https://github.com/ServeRest) que simula uma loja virtual, com o objetivo de me aprofundar um pouco mais nos estudos sobre testes automatizados em Ruby.
@@ -51,7 +51,7 @@ chrome://settings/help
   - NÃO executar o executável "chromedriver.exe"
   - Mover o executável "chromedriver.exe" para o diretório "C:\Windows\System32"
 		
-- Abrir um novo cmder ou outro terminal de preferência, informar o comando abaixo para confirmar se o novo chromedriver realmente foi instalado, e verificar se a versão apresentada é a mesma no qual foi baixada no site com a versão "Stabe" anteriormente (Ex.: ChromeDriver 119.0.6045.105)
+- Abrir um novo cmder ou outro terminal de preferência, informar o comando abaixo para confirmar se o novo chromedriver realmente foi instalado, e verificar se a versão apresentada é a mesma no qual foi baixada no site com a versão "Stable" anteriormente (Ex.: ChromeDriver 119.0.6045.105)
 ```
 chromedriver -v
 ```
