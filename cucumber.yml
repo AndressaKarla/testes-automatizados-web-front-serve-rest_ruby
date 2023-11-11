@@ -1,0 +1,13 @@
+default: -p pretty --publish-quiet -p html -p dev -p chrome
+
+pretty: --format pretty
+dev: ENVIRONMENT=dev
+local: ENVIRONMENT=local
+ci: -p pretty --publish-quiet -p html -p dev -p chrome_headless 
+
+chrome: BROWSER=chrome
+chrome_headless: BROWSER=chrome_headless
+firefox: BROWSER=firefox
+firefox_headless: BROWSER=firefox_headless
+
+html: --format html --out=relatorios/relatorio.html

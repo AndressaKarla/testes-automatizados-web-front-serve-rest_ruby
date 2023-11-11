@@ -1,0 +1,40 @@
+name: Pipeline Testes Automatizados Web Front ServeRest Ruby
+
+# executa o workflow toda vez que for realizado um push ou pull-request no repositório
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
+  # permite também executar esse workflow manualmente na aba "Actions" do GitHub
+  workflow_dispatch:
+
+jobs:
+  testes-automatizados-web-front-serve-rest-ruby-chrome:
+      # agente de execução/runner do tipo máquina virtual bem enxuta, sem interface gráfica
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Passo 1 - Obter cópia do código-fonte do repositório
+        uses: actions/checkout@v3
+     
+      - name: Passo 2 - Instalar ruby e Instalar dependências 
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1.2'
+          # executa o comando bundle install e armazena as gems instaladas automaticamente
+          bundler-cache: true
+        
+      - name: Passo 3 - Executar testes no navegador chrome em modo headless (2º plano) em um ambiente de desenvolvimento e Gerar os resultados dos testes
+        run: bundle exec cucumber -p ci
+            
+      - name: Passo 4 - Armazenar os resultados dos testes em relatório html
+        uses: actions/upload-artifact@v3
+        # expressão condicional para que sempre seja executado independentemente dos resultados dos steps anteriores
+        if: ${{ always() }}
+        with: 
+            name: reports
+            path: ./relatorios/relatorio.html
+            # armazena o relatório html por 30 dias
+            retention-days: 30

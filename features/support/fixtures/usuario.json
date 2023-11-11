@@ -1,0 +1,18 @@
+{
+    "admin1": {
+        "nome_valido1": "Usuario Admin2",
+        "email_valido1": "usuario.admin2@gmail.com",
+        "senha_valida1": "teste1234",
+        "nome_invalido_vazio1": "",
+        "email_invalido_vazio1": "",
+        "senha_invalida_vazia1": "",
+        "nome_valido2": "Usuario Admin3",
+        "email_invalido_dominio_sem_ponto1": "usuario.admin3@yahoo",
+        "senha_valida2": "teste1235"
+    },
+    "padrao_valido1": {
+        "nome_valido3": "Usuario Padrao",
+        "email_valido2": "usuario.padrao@outlook.com",
+        "senha_valida3": "teste1236"
+    }
+}

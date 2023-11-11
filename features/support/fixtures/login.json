@@ -1,0 +1,14 @@
+{
+    "admin_valido1": {
+        "email_valido1": "fulano@qa.com",
+        "senha_valida1": "teste"
+    },
+    "invalido1": {
+        "email_invalido_vazio1": "",
+        "senha_invalida_vazia1": "",
+        "email_invalido_dominio_sem_ponto1": "usuario4@outlook",
+        "senha_valida2": "teste2",
+        "email_invalido_nao_cadastrado1": "usuario5@gmail.com",
+        "senha_invalida_nao_cadastrada1": "teste3"
+    }
+}
