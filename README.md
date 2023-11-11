@@ -132,7 +132,7 @@ git clone git@github.com:AndressaKarla/testes-automatizados-web-front-serve-rest
 
 
 ## :hammer_and_wrench: Instalar todas as dependências necessárias
-- No cmder aberto anteriormente, informar o comando abaixo para acessar o projeto “testes-automatizados-web-front-serve-rest_ruby” clonada anteriormente
+- No cmder aberto anteriormente, informar o comando abaixo para acessar o projeto “testes-automatizados-web-front-serve-rest_ruby” clonado anteriormente
 ```
 cd testes-automatizados-web-front-serve-rest_ruby
 ```
@@ -186,9 +186,9 @@ Ex.:
 ```
 cd "C:\Users\usuario\Desktop\testes-automatizados-web-front-serve-rest_ruby"
 ```
-- Informar o comando abaixo para executar cada feature completa e/ou cada cenário individualmente no projeto:
+- Informar o comando abaixo para executar cada feature e/ou cada cenário individualmente do projeto:
 ```ruby
-bundle exec cucumber -t @<nome_tag>
+bundle exec cucumber -t @nome_tag
 ```
 Ex. 1:
 ```ruby
@@ -196,19 +196,16 @@ bundle exec cucumber -t @login_entrar
 ```
 Ex. 2: 
 ```ruby
-bundle exec cucumber -t @login_cadastre_se
+bundle exec cucumber -t @pesquisar_produto_nao_cadastrado
 ```
-Ex. 3: 
-```ruby
-bundle exec cucumber -t @pesquisar_produtos
-```
-- Ou informar o comando abaixo para executar todos os cenários no projeto:
+
+- Ou informar o comando abaixo para executar todas as features e/ou cenários do projeto:
 ```ruby
 bundle exec cucumber
 ```
 
 ## :triangular_flag_on_post: Ou executar os testes automatizados web no navegador chrome em modo headless (2° plano) e Gerar os resultados dos testes
-- No cmder aberto anteriormente, informar o comando abaixo para executar todos os cenários no projeto em modo headless (2° plano - mesmo modo que é utilizado no "workflow-testes-automatizados-web-front-serve-rest-ruby.yml" no GitHub Actions) e Gerar os resultados dos testes:
+- No cmder aberto anteriormente, informar o comando abaixo para executar todas as features e/ou cenários do projeto em modo headless (2° plano - mesmo modo que é utilizado no ["workflow-testes-automatizados-web-front-serve-rest-ruby.yml"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/.github/workflows/workflow-testes-automatizados-web-front-serve-rest-ruby.yml) no GitHub Actions) e Gerar os resultados dos testes:
 ```ruby
 bundle exec cucumber -p ci
 ```
@@ -260,7 +257,7 @@ Ex.: relatorios > screenshots > testes_falharam > 10_11_2023
 
 ## :bookmark_tabs: Relatório html 
 - No VS Code aberto anteriormente, acessar "relatorios > relatorio.html" 
-- Clicar com botão direito do mouse sob o arquivo html > Reveal in File Explorer 
+- Clicar com botão direito do mouse sob o arquivo "relatorio.html" > "Reveal in File Explorer" 
 - Na janela do "Windows Explorer" aberta automaticamente, clicar 2 vezes sob o arquivo "relatorio.html" para ser aberto e visualizado no navegador padrão
 
 
