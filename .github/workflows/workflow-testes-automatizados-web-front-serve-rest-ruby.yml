@@ -34,7 +34,7 @@ jobs:
         # expressão condicional para que sempre seja executado independentemente dos resultados dos steps anteriores
         if: ${{ always() }}
         with: 
-            name: reports
+            name: relatorio_html_chrome
             path: ./relatorios/relatorio.html
             # armazena o relatório html por 30 dias
             retention-days: 30
