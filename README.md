@@ -2,10 +2,69 @@
 # :test_tube: Projeto de Testes Automatizados Web | Ruby | Cucumber | Capybara | SitePrism | Rspec | HTTParty | GitHub Actions :test_tube:
 ---
 # :information_source: Introdução
-- Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um ambiente de desenvolvimento no ["front"](https://front.serverest.dev) e na ["API REST"](https://serverest.dev) do ["ServeRest"](https://github.com/ServeRest) que simula uma loja virtual, com o objetivo de me aprofundar um pouco mais nos estudos sobre testes automatizados em Ruby.
+Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um ambiente de desenvolvimento no ["front"](https://front.serverest.dev) e na ["API REST"](https://serverest.dev) do ["ServeRest"](https://github.com/ServeRest) que simula uma loja virtual, com o objetivo de me aprofundar um pouco mais nos estudos sobre testes automatizados web em Ruby nas ferramentas Cucumber, Capybara, SitePrism, Rspec, HTTParty e GitHub Actions.
 
 ---
-# :warning: Antes de clonar ou executar esse projeto, é necessário seguir as instruções abaixo :point_down:
+# :dart: Executar testes em um ambiente de desenvolvimento e Gerar os resultados dos testes no GitHub Actions
+
+## :triangular_flag_on_post: Executar os testes automatizados web no navegador chrome em modo headless (2° plano) e Gerar os resultados dos testes no GitHub Actions
+- Nesse repositório, acessar a aba "Actions"
+- Na seção "Actions", clicar em "Pipeline Testes Automatizados Web Front ServeRest Ruby"
+- Em "This workflow has a workflow_dispatch event trigger.", clicar em "Run workflow" > "Run workflow" para executar os testes automatizados web no navegador chrome em modo headless (2° plano)  no GitHub Actions
+- Após o término da execução, clicar na run "Pipeline Testes Automatizados Web Front ServeRest Ruby"
+- Na seção "Artifacts", clicar em "relatorio_html_chrome"
+- Na janela aberta, escolher um diretório para baixar a pasta compactada "relatorio_html_chrome.zip"
+- Na seção "Artifacts", clicar em "screenshots_chrome"
+- Na janela aberta, escolher um diretório para baixar a pasta compactada "screenshots_chrome.zip"
+
+
+# :female_detective: Verificar no navegador padrão o relatório html gerado e armazenado anteriormente no GitHub Actions e descompactado no computador :male_detective: 
+- Abrir uma janela do "Windows Explorer"
+- Acessar o diretório onde foi baixada a pasta compactada "relatorio_html_chrome.zip" anteriormente
+- Descompactar a pasta
+- Acessar a pasta descompactada "relatorio_html_chrome"
+- Clicar 2 vezes sob o relatório "relatorio.html" gerado e armazenado anteriormente no GitHub Actions e descompactado para ser aberto e verificado no navegador padrão no computador
+
+
+# :female_detective: Verificar os screenshots gerados e armazenados anteriormente no GitHub Actions e descompactados no computador :male_detective:
+- Abrir uma outra janela do "Windows Explorer"
+- Acessar o diretório onde foi baixada a pasta compactada "screenshots_chrome.zip" anteriormente
+- Descompactar a pasta
+- Acessar a pasta descompactada "screenshots_chrome"
+
+
+## :heavy_check_mark: Em caso de sucesso dos testes, verificar os screenshots da pasta "testes_passaram"
+- Na pasta descompactada "screenshots_chrome" acessada anteriormente, acessar "testes_passaram > dd_mm_aaaa" 
+```
+- nome_cenario1-dd_mm_aaaa-hh1_mm1_ss1.png
+  . . .
+- nome_cenariox-dd_mm_aaaa-hhx_mmx_ssx.png
+```  
+  
+Ex.: testes_passaram > 10_11_2023 
+```
+- validar_cadastro_administrador-10_11_2023-03_19_10.png
+. . .
+- validar_pesquisar_produtos_-_produto_não_cadastrado-10_11_2023-03_19_29.png
+```
+
+## :x: Em caso de falha dos testes, verificar os screenshots da pasta "testes_falharam"
+- Na pasta descompactada "screenshots_chrome" acessada anteriormente, acessar "testes_falharam > dd_mm_aaaa" 
+```
+- nome_cenario1-dd_mm_aaaa-hh1_mm1_ss1.png
+  . . .
+- nome_cenariox-dd_mm_aaaa-hhx_mmx_ssx.png
+```  
+
+Ex.: testes_falharam > 10_11_2023
+```
+- validar_cadastro_administrador-10_11_2023-03_47_21.png
+. . .
+- validar_pesquisar_produtos_-_produto_não_cadastrado-10_11_2023-03_47_40.png
+``` 
+
+---
+# :warning: Antes de clonar ou executar esse projeto localmente no computador, é necessário seguir as instruções abaixo :point_down:
 
 ## :hammer_and_wrench: Janela do "Windows Explorer" > aba "Exibir" e marcar algumas opções
 - Abrir uma janela do "Windows Explorer"
@@ -147,15 +206,21 @@ bundle install
 - Fechar esse cmder
 
 ## :hammer_and_wrench: Instalar as extensões no Visual Studio Code (VS Code)
-- Caso ainda não tenha o VS Code baixado e instalado, acessar o site do [Visual Studio Code](https://code.visualstudio.com/download), baixar e instalar
-- Com o Visual Studio Code aberto, caso seja apresentado alguma mensagem de "Instalar pacote de idiomas ...", clicar no ícone de configurações > "Don't Show Again" 
+- Caso ainda não tenha o VS Code baixado e instalado, acessar o site do [Visual Studio Code](https://code.visualstudio.com/download), baixar e instalar com a opção "System Installer"
+- Com o Visual Studio Code aberto, caso seja apresentado alguma mensagem de "Instalar pacote de idiomas ...", clicar no ícone de configurações > "Don't Show Again"
+- Clicar na opção "Manage > Profiles > Create Profile"
+- Em "Profile name", informar "Ruby"
+- Clicar na opção "Create"
 - Clicar na opção "Extensions", informar e instalar as extensões abaixo:
+  - One Dark Pro
+    - binaryify
+      - Clicar na opção "One Dark Pro Darker" apresentada para habilitar a extensão
   - Ruby 
     - Peng Lv
   - VsCode Ruby 
     - Stafford Brunk
-  - vscode-icons
-    - VSCode Icons Team
+  - Material Icon Theme
+    - Philipp Kief
       - Clicar na opção apresentada para habilitar a extensão
   - Cucumber 
     - Cucumber for Visual Studio Code
@@ -171,9 +236,9 @@ bundle install
 - Fechar o VS Code
   
 ---
-# :dart: Executar testes em um ambiente de desenvolvimento e Gerar os resultados dos testes 
+# :dart: Executar testes em um ambiente de desenvolvimento e Gerar os resultados dos testes no computador
 
-## :triangular_flag_on_post: Executar os testes automatizados web no navegador chrome na interface gráfica e Gerar os resultados dos testes
+## :triangular_flag_on_post: Executar os testes automatizados web no navegador chrome na interface gráfica e Gerar os resultados dos testes no computador
 - Abrir uma janela do "Windows Explorer"
 - Acessar o diretório onde foi clonado o projeto “testes-automatizados-web-front-serve-rest_ruby”
 - Copiar esse diretório 
@@ -204,14 +269,14 @@ bundle exec cucumber -t @pesquisar_produto_nao_cadastrado
 bundle exec cucumber
 ```
 
-## :triangular_flag_on_post: Ou executar os testes automatizados web no navegador chrome em modo headless (2° plano) e Gerar os resultados dos testes
-- No cmder aberto anteriormente, informar o comando abaixo para executar todas as features e/ou cenários do projeto em modo headless (2° plano - mesmo modo que é utilizado no ["workflow-testes-automatizados-web-front-serve-rest-ruby.yml"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/.github/workflows/workflow-testes-automatizados-web-front-serve-rest-ruby.yml) no GitHub Actions) e Gerar os resultados dos testes:
+## :triangular_flag_on_post: Ou executar os testes automatizados web no navegador chrome em modo headless (2° plano) e Gerar os resultados dos testes no computador
+- No cmder aberto anteriormente, informar o comando abaixo para executar todas as features e/ou cenários do projeto em modo headless (2° plano - mesmo modo e comando que é utilizado no "Passo 3" da "Pipeline Testes Automatizados Web Front ServeRest Ruby" em ".github > workflows > [workflow-testes-automatizados-web-front-serve-rest-ruby.yml](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/.github/workflows/workflow-testes-automatizados-web-front-serve-rest-ruby.yml)" no GitHub Actions) e Gerar os resultados dos testes no computador:
 ```ruby
 bundle exec cucumber -p ci
 ```
 
 ---
-# :female_detective: Verificar os resultados das execuções dos testes automatizados web :male_detective:
+# :female_detective: Verificar os resultados das execuções dos testes automatizados web no computador :male_detective:
 
 ## :bookmark_tabs: Abrir o VS Code diretamente na pasta do projeto "testes-automatizados-web-front-serve-rest_ruby"
 - No cmder aberto anteriormente, informar o comando abaixo para abrir o VS Code diretamente na pasta do projeto "testes-automatizados-web-front-serve-rest_ruby"
@@ -222,7 +287,7 @@ code .
 	- Clicar no botão "Yes, I trust the authors ...."
 
 
-## :bookmark_tabs: Screenshots
+## :bookmark_tabs: Screenshots no computador
 
 ## :heavy_check_mark: Em caso de sucesso dos testes, verificar os screenshots da pasta "testes_passaram"
 - No VS Code aberto anteriormente, acessar "relatorios > screenshots > testes_passaram > dd_mm_aaaa" 
@@ -255,7 +320,7 @@ Ex.: relatorios > screenshots > testes_falharam > 10_11_2023
 ``` 
 
 
-## :bookmark_tabs: Relatório html 
+## :bookmark_tabs: Relatório html no computador
 - No VS Code aberto anteriormente, acessar "relatorios > relatorio.html" 
 - Clicar com botão direito do mouse sob o arquivo "relatorio.html" > "Reveal in File Explorer" 
 - Na janela do "Windows Explorer" aberta automaticamente, clicar 2 vezes sob o arquivo "relatorio.html" para ser aberto e visualizado no navegador padrão
