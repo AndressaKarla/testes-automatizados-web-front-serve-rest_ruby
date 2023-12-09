@@ -1,5 +1,5 @@
 ---
-# :test_tube: Projeto de Testes Automatizados Web | Ruby | Cucumber | Capybara | SitePrism | Rspec | HTTParty | GitHub Actions :test_tube:
+# Projeto de Testes Automatizados Web | Ruby | Cucumber | Capybara | SitePrism | Rspec | HTTParty | GitHub Actions
 ---
 # :information_source: Introdução
 Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um ambiente de desenvolvimento no ["front"](https://front.serverest.dev) e na ["API REST"](https://serverest.dev) do ["ServeRest"](https://github.com/ServeRest) que simula uma loja virtual, com o objetivo de me aprofundar um pouco mais nos estudos sobre testes automatizados web em Ruby nas ferramentas Cucumber, Capybara, SitePrism, Rspec, HTTParty e GitHub Actions.
@@ -18,7 +18,7 @@ Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um
 - Na janela aberta, escolher um diretório para baixar a pasta compactada "screenshots_chrome.zip"
 
 
-# :female_detective: Verificar no navegador padrão o relatório html gerado e armazenado anteriormente no GitHub Actions e descompactado no computador :male_detective: 
+# Verificar no navegador padrão o relatório html gerado e armazenado anteriormente no GitHub Actions e descompactado no computador :female_detective:
 - Abrir uma janela do "Windows Explorer"
 - Acessar o diretório onde foi baixada a pasta compactada "relatorio_html_chrome.zip" anteriormente
 - Descompactar a pasta
@@ -26,7 +26,7 @@ Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um
 - Clicar 2 vezes sob o relatório "relatorio.html" gerado e armazenado anteriormente no GitHub Actions e descompactado para ser aberto e verificado no navegador padrão no computador
 
 
-# :female_detective: Verificar os screenshots gerados e armazenados anteriormente no GitHub Actions e descompactados no computador :male_detective:
+# Verificar os screenshots gerados e armazenados anteriormente no GitHub Actions e descompactados no computador :female_detective:
 - Abrir uma outra janela do "Windows Explorer"
 - Acessar o diretório onde foi baixada a pasta compactada "screenshots_chrome.zip" anteriormente
 - Descompactar a pasta
@@ -64,7 +64,7 @@ Ex.: testes_falharam > 10_11_2023
 ``` 
 
 ---
-# :warning: Antes de clonar ou executar esse projeto localmente no computador, é necessário seguir as instruções abaixo :point_down:
+# Antes de clonar ou executar esse projeto localmente no computador, é necessário seguir as instruções abaixo :point_down:
 
 ## :hammer_and_wrench: Janela do "Windows Explorer" > aba "Exibir" e marcar algumas opções
 - Abrir uma janela do "Windows Explorer"
@@ -276,7 +276,7 @@ bundle exec cucumber -p ci
 ```
 
 ---
-# :female_detective: Verificar os resultados das execuções dos testes automatizados web no computador :male_detective:
+# Verificar os resultados das execuções dos testes automatizados web no computador :female_detective:
 
 ## :bookmark_tabs: Abrir o VS Code diretamente na pasta do projeto "testes-automatizados-web-front-serve-rest_ruby"
 - No cmder aberto anteriormente, informar o comando abaixo para abrir o VS Code diretamente na pasta do projeto "testes-automatizados-web-front-serve-rest_ruby"
