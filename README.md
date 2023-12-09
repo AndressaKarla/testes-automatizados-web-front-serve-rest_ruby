@@ -1,5 +1,5 @@
 ---
-# Projeto de Testes Automatizados Web | Ruby | Cucumber | Capybara | SitePrism | Rspec | HTTParty | GitHub Actions
+# Projeto de Testes Automatizados Web | Ruby | Cucumber | Capybara | SitePrism | Rspec | HTTParty | GitHub Actions :test_tube:
 ---
 # :information_source: Introdução
 Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um ambiente de desenvolvimento no ["front"](https://front.serverest.dev) e na ["API REST"](https://serverest.dev) do ["ServeRest"](https://github.com/ServeRest) que simula uma loja virtual, com o objetivo de me aprofundar um pouco mais nos estudos sobre testes automatizados web em Ruby nas ferramentas Cucumber, Capybara, SitePrism, Rspec, HTTParty e GitHub Actions.
