@@ -137,7 +137,7 @@ chromedriver -v
 - Fechar esse terminal
 
 - Abrir um novo cmder ou outro terminal de preferência, informar o comando abaixo para confirmar se o ruby realmente foi instalado
-```ruby
+```
 ruby -v
 ```
 - E verificar se foi retornada a mesma versão do ruby+devkit instalada anteriormente:
@@ -148,14 +148,14 @@ ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x64-mingw-ucrt]
 
 ## :hammer_and_wrench: Cucumber versão 8.0.0
 - No cmder ou terminal aberto anteriormente, informar o comando abaixo para instalar o cucumber versão 8.0.0 
-```ruby
+```
 gem install cucumber -v 8.0.0
 ```
 
 
 ## :hammer_and_wrench: Rspec versão 3.12.0
 - No cmder aberto anteriormente, informar o comando abaixo para instalar o rspec versão 3.12.0
-```ruby
+```
 gem install rspec -v 3.12.0
 ```
 - Fechar esse cmder ou terminal
