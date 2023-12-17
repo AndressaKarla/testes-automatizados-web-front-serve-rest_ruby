@@ -10,4 +10,4 @@ chrome_headless: BROWSER=chrome_headless
 firefox: BROWSER=firefox
 firefox_headless: BROWSER=firefox_headless
 
-html: --format html --out=relatorios/relatorio.html
+html: --format html --out=relatorios/relatorio-web-front-serve-rest-ruby.html

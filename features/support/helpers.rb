@@ -1,4 +1,4 @@
-module Helper
+module Helpers
     def carregar_fixture(nome_arquivo)
         JSON.parse(File.read("features/support/fixtures/#{nome_arquivo}.json"))
     end

@@ -35,7 +35,7 @@ jobs:
         if: ${{ always() }}
         with: 
             name: relatorio_html_chrome
-            path: ./relatorios/relatorio.html
+            path: ./relatorios/relatorio-web-front-serve-rest-ruby.html
             # armazena o relatório html por 30 dias
             retention-days: 30
             
@@ -45,7 +45,6 @@ jobs:
         with: 
             name: screenshots_chrome
             path: ./relatorios/screenshots
-            # armazena os screenshots por 30 dias
             retention-days: 30
 
 

@@ -23,7 +23,7 @@ Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um
 - Acessar o diretório onde foi baixada a pasta compactada "relatorio_html_chrome.zip" anteriormente
 - Descompactar a pasta
 - Acessar a pasta descompactada "relatorio_html_chrome"
-- Clicar 2 vezes sob o relatório "relatorio.html" gerado e armazenado anteriormente no GitHub Actions e descompactado para ser aberto e verificado no navegador padrão no computador
+- Clicar 2 vezes sob o relatório "relatorio-web-front-serve-rest-ruby.html" gerado e armazenado anteriormente no GitHub Actions e descompactado para ser aberto e verificado no navegador padrão no computador
 
 
 # Verificar os screenshots gerados e armazenados anteriormente no GitHub Actions e descompactados no computador :female_detective:
@@ -158,7 +158,7 @@ gem install cucumber -v 8.0.0
 ```ruby
 gem install rspec -v 3.12.0
 ```
-
+- Fechar esse cmder ou terminal
 
 ## :hammer_and_wrench: Baixar, instalar e configurar o git
 - Caso ainda não tenha o git baixado e instalado, acessar o site do [git](https://git-scm.com/download/win), baixar e instalar
@@ -169,7 +169,8 @@ gem install rspec -v 3.12.0
 - Abrir uma janela do "Windows Explorer"
 - Acessar o diretório onde será clonado o projeto "testes-automatizados-web-front-serve-rest_ruby"
 - Copiar esse diretório 
-- No cmder aberto anteriormente, informar o comando abaixo para acessar onde será clonado o projeto
+- Abrir um novo cmder
+- Informar o comando abaixo para acessar onde será clonado o projeto
 ```
 cd "<diretório copiado anteriormente>"
 ```
@@ -200,7 +201,7 @@ Ex.:
 C:\Users\usuario\Desktop\testes-automatizados-web-front-serve-rest_ruby
 ```
 - Informar o comando abaixo para instalar todas as dependências necessárias do projeto 
-```ruby
+```
 bundle install
 ```
 - Fechar esse cmder
@@ -215,13 +216,13 @@ bundle install
   - One Dark Pro
     - binaryify
       - Clicar na opção "One Dark Pro Darker" apresentada para habilitar a extensão
+  - Material Icon Theme
+    - Philipp Kief
+      - Clicar na opção "Material Icon Theme" apresentada para habilitar a extensão
   - Ruby 
     - Peng Lv
   - VsCode Ruby 
     - Stafford Brunk
-  - Material Icon Theme
-    - Philipp Kief
-      - Clicar na opção apresentada para habilitar a extensão
   - Cucumber 
     - Cucumber for Visual Studio Code
   - Cucumber (Gherkin) Full Support 
@@ -252,26 +253,26 @@ Ex.:
 cd "C:\Users\usuario\Desktop\testes-automatizados-web-front-serve-rest_ruby"
 ```
 - Informar o comando abaixo para executar cada feature e/ou cada cenário individualmente do projeto:
-```ruby
+```
 bundle exec cucumber -t @nome_tag
 ```
 Ex. 1:
-```ruby
+```
 bundle exec cucumber -t @login_entrar
 ```
 Ex. 2: 
-```ruby
+```
 bundle exec cucumber -t @pesquisar_produto_nao_cadastrado
 ```
 
 - Ou informar o comando abaixo para executar todas as features e/ou cenários do projeto:
-```ruby
+```
 bundle exec cucumber
 ```
 
 ## :triangular_flag_on_post: Ou executar os testes automatizados web no navegador chrome em modo headless (2° plano) e Gerar os resultados dos testes no computador
 - No cmder aberto anteriormente, informar o comando abaixo para executar todas as features e/ou cenários do projeto em modo headless (2° plano - mesmo modo e comando que é utilizado no "Passo 3" da "Pipeline Testes Automatizados Web Front ServeRest Ruby" em ".github > workflows > [workflow-testes-automatizados-web-front-serve-rest-ruby.yml](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/.github/workflows/workflow-testes-automatizados-web-front-serve-rest-ruby.yml)" no GitHub Actions) e Gerar os resultados dos testes no computador:
-```ruby
+```
 bundle exec cucumber -p ci
 ```
 
@@ -321,9 +322,9 @@ Ex.: relatorios > screenshots > testes_falharam > 10_11_2023
 
 
 ## :bookmark_tabs: Relatório html no computador
-- No VS Code aberto anteriormente, acessar "relatorios > relatorio.html" 
-- Clicar com botão direito do mouse sob o arquivo "relatorio.html" > "Reveal in File Explorer" 
-- Na janela do "Windows Explorer" aberta automaticamente, clicar 2 vezes sob o arquivo "relatorio.html" para ser aberto e visualizado no navegador padrão
+- No VS Code aberto anteriormente, acessar "relatorios > relatorio-web-front-serve-rest-ruby.html" 
+- Clicar com botão direito do mouse sob o arquivo "relatorio-web-front-serve-rest-ruby.html" > "Reveal in File Explorer" 
+- Na janela do "Windows Explorer" aberta automaticamente, clicar 2 vezes sob o arquivo "relatorio-web-front-serve-rest-ruby.html" para ser aberto e visualizado no navegador padrão
 
 
 ---
