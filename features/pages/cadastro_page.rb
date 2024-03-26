@@ -9,7 +9,7 @@ class Cadastro < SitePrism::Page
     element :botao_cadastrar, 'button[type="submit"]'
     element :rolagem_tela, 'small[class="message form-text"]'
 
-    def cadastrar_admin(nome, email, senha)
+    def realizar_login_admin_opcao_cadastre_se(nome, email, senha)
         campo_nome.click
         campo_nome.set nome
 

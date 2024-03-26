@@ -10,7 +10,7 @@ end
 
 Quando('eu informar os campos {string}, {string}, {string} e opcão Cadastrar como administrador') do |nome, email, senha|
     @usuario_fixture = carregar_fixture('usuario')
-    cadastro.cadastrar_admin(@usuario_fixture['admin1'][nome], @usuario_fixture['admin1'][email], @usuario_fixture['admin1'][senha])    
+    cadastro.realizar_login_admin_opcao_cadastre_se(@usuario_fixture['admin1'][nome], @usuario_fixture['admin1'][email], @usuario_fixture['admin1'][senha])    
 end
 
 Então('na tela de Cadastro deverá apresentar a mensagem "{string}"') do |mensagem_esperada|

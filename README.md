@@ -10,7 +10,7 @@ Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um
 ## :triangular_flag_on_post: Executar os testes automatizados web no navegador chrome em modo headless (2° plano) e Gerar os resultados dos testes no GitHub Actions
 - Nesse repositório, acessar a aba "Actions"
 - Na seção "Actions", clicar em "Pipeline Testes Automatizados Web Front ServeRest Ruby"
-- Em "This workflow has a workflow_dispatch event trigger.", clicar em "Run workflow" > "Run workflow" para executar os testes automatizados web no navegador chrome em modo headless (2° plano)  no GitHub Actions
+- Em "This workflow has a workflow_dispatch event trigger.", clicar em "Run workflow" > "Run workflow" para executar os testes automatizados web no navegador chrome em modo headless (2° plano) no GitHub Actions [com os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", etc (baseado nos arquivos ["login.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/login.example.json), ["usuario.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/usuario.example.json), etc, e configurados na aba "Settings" desse repositório > "Secrets and variables" > "Actions" > "Secrets" > "Repository secrets") que foram redirecionados para os arquivos "login.json", "usuario.json"]
 - Após o término da execução, clicar na run "Pipeline Testes Automatizados Web Front ServeRest Ruby"
 - Na seção "Artifacts", clicar em "relatorio_html_chrome"
 - Na janela aberta, escolher um diretório para baixar a pasta compactada "relatorio_html_chrome.zip"
@@ -144,20 +144,6 @@ ruby -v
 ```
 ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x64-mingw-ucrt]
 ```
-
-
-## :hammer_and_wrench: Cucumber versão 8.0.0
-- No cmder ou terminal aberto anteriormente, informar o comando abaixo para instalar o cucumber versão 8.0.0 
-```
-gem install cucumber -v 8.0.0
-```
-
-
-## :hammer_and_wrench: Rspec versão 3.12.0
-- No cmder aberto anteriormente, informar o comando abaixo para instalar o rspec versão 3.12.0
-```
-gem install rspec -v 3.12.0
-```
 - Fechar esse cmder ou terminal
 
 ## :hammer_and_wrench: Baixar, instalar e configurar o git
@@ -204,7 +190,6 @@ C:\Users\usuario\Desktop\testes-automatizados-web-front-serve-rest_ruby
 ```
 bundle install
 ```
-- Fechar esse cmder
 
 ## :hammer_and_wrench: Instalar as extensões no Visual Studio Code (VS Code)
 - Caso ainda não tenha o VS Code baixado e instalado, acessar o site do [Visual Studio Code](https://code.visualstudio.com/download), baixar e instalar com a opção "System Installer"
@@ -234,7 +219,24 @@ bundle install
   - Snippets and Syntax Highlight for Gherkin (Cucumber) 
     - Euclidity
     
-- Fechar o VS Code
+## :bookmark_tabs: Abrir o VS Code diretamente na pasta do projeto "testes-automatizados-web-front-serve-rest_ruby"
+- No cmder aberto anteriormente, informar o comando abaixo para abrir o VS Code diretamente na pasta do projeto "testes-automatizados-web-front-serve-rest_ruby"
+```
+code .
+```
+- Aguardar o VS Code ser aberto
+- Fechar esse cmder
+- No VS Code aberto, caso seja apresentado "Do you trust the authors on the files in this folder?", marcar a opção "Trust the authors of all files in the parent folder ...."
+	- Clicar no botão "Yes, I trust the authors ...."
+
+## :hammer_and_wrench: Criar arquivos "login.json", "usuario.json", informando os dados com base nos arquivos "login.example.json", "usuario.example.json", etc
+- No VS Code aberto anteriormente, acessar "features > support > fixtures"
+- Criar o arquivo "login.json"
+  - Informar os dados com base no arquivo ["login.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/login.example.json)
+  - Salvar o arquivo "login.json" com os dados informados anteriormente
+- Criar o arquivo "usuario.json"
+  - Informar os dados com base no arquivo ["usuario.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/usuario.example.json)
+  - Salvar o arquivo "usuario.json" com os dados informados anteriormente
   
 ---
 # :dart: Executar testes em um ambiente de desenvolvimento e Gerar os resultados dos testes no computador
@@ -271,7 +273,7 @@ bundle exec cucumber
 ```
 
 ## :triangular_flag_on_post: Ou executar os testes automatizados web no navegador chrome em modo headless (2° plano) e Gerar os resultados dos testes no computador
-- No cmder aberto anteriormente, informar o comando abaixo para executar todas as features e/ou cenários do projeto em modo headless (2° plano - mesmo modo e comando que é utilizado no "Passo 3" da "Pipeline Testes Automatizados Web Front ServeRest Ruby" em ".github > workflows > [workflow-testes-automatizados-web-front-serve-rest-ruby.yml](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/.github/workflows/workflow-testes-automatizados-web-front-serve-rest-ruby.yml)" no GitHub Actions) e Gerar os resultados dos testes no computador:
+- No cmder aberto anteriormente, informar o comando abaixo para executar todas as features e/ou cenários do projeto em modo headless (2° plano - mesmo modo e comando que é utilizado no "Passo 4" da "Pipeline Testes Automatizados Web Front ServeRest Ruby" em ".github > workflows > [workflow-testes-automatizados-web-front-serve-rest-ruby.yml](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/.github/workflows/workflow-testes-automatizados-web-front-serve-rest-ruby.yml)" no GitHub Actions) e Gerar os resultados dos testes no computador:
 ```
 bundle exec cucumber -p ci
 ```
