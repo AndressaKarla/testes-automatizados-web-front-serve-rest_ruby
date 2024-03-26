@@ -18,18 +18,23 @@ jobs:
       steps:
       - name: Passo 1 - Obter cópia do código-fonte do repositório
         uses: actions/checkout@v3
+
+      - name: Passo 2 - Redirecionar os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", para os arquivos "login.json", "usuario.json", etc
+        run: |
+          echo '${{ secrets.LOGIN_ENV }}' > ./features/support/fixtures/login.json
+          echo '${{ secrets.USUARIO_ENV }}' > ./features/support/fixtures/usuario.json
      
-      - name: Passo 2 - Instalar ruby e Instalar dependências 
+      - name: Passo 3 - Instalar ruby e Instalar dependências 
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1.2'
           # executa o comando bundle install e armazena as gems instaladas automaticamente
           bundler-cache: true
         
-      - name: Passo 3 - Executar testes no navegador chrome em modo headless (2º plano) em um ambiente de desenvolvimento e Gerar os resultados dos testes
+      - name: Passo 4 - Executar testes no navegador chrome em modo headless (2º plano) em um ambiente de desenvolvimento e Gerar os resultados dos testes
         run: bundle exec cucumber -p ci
 
-      - name: Passo 4 - Armazenar os resultados dos testes em relatório html
+      - name: Passo 5 - Armazenar os resultados dos testes em relatório html
         uses: actions/upload-artifact@v3
         # expressão condicional para que sempre seja executado independentemente dos resultados dos steps anteriores
         if: ${{ always() }}
@@ -39,7 +44,7 @@ jobs:
             # armazena o relatório html por 30 dias
             retention-days: 30
             
-      - name: Passo 5 - Armazenar os resultados dos testes em screenshots
+      - name: Passo 6 - Armazenar os resultados dos testes em screenshots
         uses: actions/upload-artifact@v3
         if: ${{ always() }}
         with: 

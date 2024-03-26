@@ -10,7 +10,7 @@ class Login < SitePrism::Page
     element :rolagem_tela, 'small[class="message form-text"]' 
     element :opcao_cadastre_se, 'a[type="button"]'
 
-    def realizar_login_entrar(email, senha)
+    def realizar_login_botao_entrar(email, senha)
         campo_email.click
         campo_email.set email
 

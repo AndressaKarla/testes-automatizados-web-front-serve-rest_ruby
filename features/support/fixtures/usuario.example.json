@@ -1,0 +1,23 @@
+{
+    "admin_valido1": {
+        "nome_valido1": "informar-nome-usuario-admin-valido",
+        "email_valido1": "informar-mesmo-email-usuario-admin-valido-fixture-login@qa.com",
+        "senha_valida1": "informar-mesma-senha-usuario-admin-valido-fixture-login"
+    },
+    "admin1": {
+        "nome_valido1": "informar-outro-nome-usuario-admin-valido",
+        "email_valido1": "informar-outro-email-usuario-admin-valido@gmail.com",
+        "senha_valida1": "informar-outra-senha-usuario-admin-valido",
+        "nome_invalido_vazio1": "deixar-apenas-as-aspas-duplas",
+        "email_invalido_vazio1": "deixar-apenas-as-aspas-duplas",
+        "senha_invalida_vazia1": "deixar-apenas-as-aspas-duplas",
+        "nome_valido2": "informar-outro-nome-usuario-admin-valido",
+        "email_invalido_dominio_sem_ponto1": "informar-email-usuario-admin-invalido-dominio-sem-ponto@yahoo",
+        "senha_valida2": "informar-outra-senha-usuario-admin-valido"
+    },
+    "padrao_valido1": {
+        "nome_valido3": "informar-nome-usuario-padrao-valido",
+        "email_valido2": "informar-email-usuario-padrao-valido@outlook.com",
+        "senha_valida3": "informar-senha-usuario-padrao-valido"
+    }
+}

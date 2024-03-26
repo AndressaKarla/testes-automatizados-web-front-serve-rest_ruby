@@ -26,6 +26,6 @@ Capybara.configure do |config|
         config.default_driver = :selenium_chrome
     end
 
-    config.app_host = CONFIG['url_default']
+    config.app_host = CONFIG['base_url']
     config.default_max_wait_time = 10
 end

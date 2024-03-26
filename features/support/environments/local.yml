@@ -1,2 +1,2 @@
-url_default: 'http://localhost:3001'
+base_url: 'http://localhost:3001'
 base_uri: 'https://serverest.dev'

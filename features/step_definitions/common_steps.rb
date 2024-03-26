@@ -13,7 +13,7 @@ end
 # Esquema do Cenario: Validar Pesquisar Produtos - produto não cadastrado 
 Dado('que eu informe os campos de email e senha de um usuário administrador') do 
     @login_fixture = carregar_fixture('login')
-    login.realizar_login_entrar(@login_fixture['admin_valido1']['email_valido1'], @login_fixture['admin_valido1']['senha_valida1'])
+    login.realizar_login_botao_entrar(@login_fixture['admin_valido1']['email_valido1'], @login_fixture['admin_valido1']['senha_valida1'])
 end
 
 Dado('que eu esteja na tela Home') do
@@ -53,7 +53,7 @@ end
 # Esquema do Cenario: Validar Pesquisar Produtos - produto cadastrado
 # Esquema do Cenario: Validar Pesquisar Produtos - produto não cadastrado 
 Dado('que eu informe os campos de {string} e {string} do usuário padrão cadastrado anteriormente') do |email, senha|
-    login.realizar_login_entrar(@usuario_fixture['padrao_valido1'][email], @usuario_fixture['padrao_valido1'][senha])
+    login.realizar_login_botao_entrar(@usuario_fixture['padrao_valido1'][email], @usuario_fixture['padrao_valido1'][senha])
 end
 
 Dado('que eu esteja na tela Home Serverest Store') do

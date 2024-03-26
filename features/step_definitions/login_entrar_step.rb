@@ -1,7 +1,7 @@
 # Esquema do Cenario: Validar Login usuário administrador
 Quando('eu informar os campos de {string} e {string} de um usuário administrador') do |email, senha|
     @login_fixture = carregar_fixture('login')
-    login.realizar_login_entrar(@login_fixture['admin_valido1'][email], @login_fixture['admin_valido1'][senha])
+    login.realizar_login_botao_entrar(@login_fixture['admin_valido1'][email], @login_fixture['admin_valido1'][senha])
 end
 
 Então('deverá apresentar a tela Home com o texto Bem Vindo') do
@@ -15,7 +15,7 @@ end
 
 # Esquema do Cenario: Validar Login usuário padrão
 Quando('eu informar os campos de {string} e {string} do usuário padrão cadastrado anteriormente') do |email, senha|
-    login.realizar_login_entrar(@usuario_fixture['padrao_valido1'][email], @usuario_fixture['padrao_valido1'][senha])
+    login.realizar_login_botao_entrar(@usuario_fixture['padrao_valido1'][email], @usuario_fixture['padrao_valido1'][senha])
 end
 
 Então('deverá apresentar a tela Home Serverest Store') do
@@ -28,7 +28,7 @@ end
 # Esquema do Cenario: Validar Login usuários inválidos
 Quando('eu informar os campos de {string}, {string} incorretamente') do |email, senha|
     @login_fixture = carregar_fixture('login')
-    login.realizar_login_entrar(@login_fixture['invalido1'][email], @login_fixture['invalido1'][senha])
+    login.realizar_login_botao_entrar(@login_fixture['invalido1'][email], @login_fixture['invalido1'][senha])
 end
 
 Então('na tela Login deverá apresentar a mensagem "{string}"') do |mensagem_esperada|
