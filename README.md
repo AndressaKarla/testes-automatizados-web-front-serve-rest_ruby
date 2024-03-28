@@ -7,7 +7,7 @@ Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um
 ---
 # :dart: Executar testes em um ambiente de desenvolvimento e Gerar os resultados dos testes no GitHub Actions
 
-## :triangular_flag_on_post: Executar os testes automatizados web no navegador chrome em modo headless (2° plano) e Gerar os resultados dos testes no GitHub Actions
+## :triangular_flag_on_post: Executar os testes automatizados web no navegador chrome, firefox, etc em modo headless (2° plano) e Gerar os resultados dos testes no GitHub Actions
 - Nesse repositório, acessar a aba "Actions"
 - Na seção "Actions", clicar em "Pipeline Testes Automatizados Web Front ServeRest Ruby"
 - Em "This workflow has a workflow_dispatch event trigger.", clicar em "Run workflow" > "Run workflow" para executar os testes automatizados web no navegador chrome em modo headless (2° plano) no GitHub Actions [com os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", etc (baseado nos arquivos ["login.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/login.example.json), ["usuario.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/usuario.example.json), etc, e configurados na aba "Settings" desse repositório > "Secrets and variables" > "Actions" > "Secrets" > "Repository secrets") que foram redirecionados para os arquivos "login.json", "usuario.json"]
