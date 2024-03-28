@@ -53,6 +53,7 @@ jobs:
             retention-days: 30
 
   testes-automatizados-web-front-serve-rest-ruby-firefox:
+      needs: testes-automatizados-web-front-serve-rest-ruby-chrome
       runs-on: ubuntu-latest
 
       steps:
