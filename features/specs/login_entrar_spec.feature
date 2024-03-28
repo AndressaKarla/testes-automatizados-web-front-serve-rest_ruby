@@ -39,8 +39,8 @@ Esquema do Cenario: Validar Login usuários inválidos
 	Quando eu informar os campos de "<email>", "<senha>" incorretamente
 	Então na tela Login deverá apresentar a mensagem "<mensagem>"
 	Exemplos:
-		| email                             | senha                          | mensagem                                                           |
-		| email_invalido_vazio1             | senha_invalida_vazia1          | "\n×\nEmail é obrigatório\n×\nPassword não pode ficar em branco\n" |
-		| email_invalido_dominio_sem_ponto1 | senha_valida2                  | "Email deve ser um email válido"                                   |
-		| email_invalido_nao_cadastrado1    | senha_invalida_nao_cadastrada1 | "Email e/ou senha inválidos"                                       |
+		| email                             | senha                          | mensagem                         |
+		| email_invalido_vazio1             | senha_valida2                  | "Email é obrigatório"            |
+		| email_invalido_dominio_sem_ponto1 | senha_valida2                  | "Email deve ser um email válido" |
+		| email_invalido_nao_cadastrado1    | senha_invalida_nao_cadastrada1 | "Email e/ou senha inválidos"     |
 		
