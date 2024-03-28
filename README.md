@@ -12,29 +12,29 @@ Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um
 - Na seção "Actions", clicar em "Pipeline Testes Automatizados Web Front ServeRest Ruby"
 - Em "This workflow has a workflow_dispatch event trigger.", clicar em "Run workflow" > "Run workflow" para executar os testes automatizados web no navegador chrome em modo headless (2° plano) no GitHub Actions [com os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", etc (baseado nos arquivos ["login.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/login.example.json), ["usuario.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/usuario.example.json), etc, e configurados na aba "Settings" desse repositório > "Secrets and variables" > "Actions" > "Secrets" > "Repository secrets") que foram redirecionados para os arquivos "login.json", "usuario.json"]
 - Após o término da execução, clicar na run "Pipeline Testes Automatizados Web Front ServeRest Ruby"
-- Na seção "Artifacts", clicar em "relatorio_html_chrome"
-- Na janela aberta, escolher um diretório para baixar a pasta compactada "relatorio_html_chrome.zip"
-- Na seção "Artifacts", clicar em "screenshots_chrome"
-- Na janela aberta, escolher um diretório para baixar a pasta compactada "screenshots_chrome.zip"
+- Na seção "Artifacts", clicar em "relatorio_html_chrome", "relatorio_html_firefox", etc
+- Na janela aberta, escolher um diretório para baixar a pasta compactada "relatorio_html_chrome.zip", "relatorio_html_firefox.zip", etc
+- Na seção "Artifacts", clicar em "screenshots_chrome", "screenshots_firefox", etc
+- Na janela aberta, escolher um diretório para baixar a pasta compactada "screenshots_chrome.zip", "screenshots_firefox.zip", etc
 
 
 # Verificar no navegador padrão o relatório html gerado e armazenado anteriormente no GitHub Actions e descompactado no computador :female_detective:
 - Abrir uma janela do "Windows Explorer"
-- Acessar o diretório onde foi baixada a pasta compactada "relatorio_html_chrome.zip" anteriormente
+- Acessar o diretório onde foi baixada a pasta compactada "relatorio_html_chrome.zip", "relatorio_html_firefox.zip" anteriormente
 - Descompactar a pasta
-- Acessar a pasta descompactada "relatorio_html_chrome"
+- Acessar a pasta descompactada "relatorio_html_chrome", "relatorio_html_firefox.zip", etc
 - Clicar 2 vezes sob o relatório "relatorio-web-front-serve-rest-ruby.html" gerado e armazenado anteriormente no GitHub Actions e descompactado para ser aberto e verificado no navegador padrão no computador
 
 
 # Verificar os screenshots gerados e armazenados anteriormente no GitHub Actions e descompactados no computador :female_detective:
 - Abrir uma outra janela do "Windows Explorer"
-- Acessar o diretório onde foi baixada a pasta compactada "screenshots_chrome.zip" anteriormente
+- Acessar o diretório onde foi baixada a pasta compactada "screenshots_chrome.zip", "screenshots_firefox.zip" anteriormente
 - Descompactar a pasta
-- Acessar a pasta descompactada "screenshots_chrome"
+- Acessar a pasta descompactada "screenshots_chrome", "screenshots_firefox", etc
 
 
 ## :heavy_check_mark: Em caso de sucesso dos testes, verificar os screenshots da pasta "testes_passaram"
-- Na pasta descompactada "screenshots_chrome" acessada anteriormente, acessar "testes_passaram > dd_mm_aaaa" 
+- Na pasta descompactada "screenshots_chrome", "screenshots_firefox" acessada anteriormente, acessar "testes_passaram > dd_mm_aaaa" 
 ```
 - nome_cenario1-dd_mm_aaaa-hh1_mm1_ss1.png
   . . .
@@ -49,7 +49,7 @@ Ex.: testes_passaram > 10_11_2023
 ```
 
 ## :x: Em caso de falha dos testes, verificar os screenshots da pasta "testes_falharam"
-- Na pasta descompactada "screenshots_chrome" acessada anteriormente, acessar "testes_falharam > dd_mm_aaaa" 
+- Na pasta descompactada "screenshots_chrome", "screenshots_firefox" acessada anteriormente, acessar "testes_falharam > dd_mm_aaaa" 
 ```
 - nome_cenario1-dd_mm_aaaa-hh1_mm1_ss1.png
   . . .
@@ -113,6 +113,29 @@ chrome://settings/help
 - Abrir um novo cmder ou outro terminal de preferência, informar o comando abaixo para confirmar se o novo chromedriver realmente foi instalado, e verificar se a versão apresentada é a mesma no qual foi baixada no site com a versão "Stable" anteriormente (Ex.: ChromeDriver 119.0.6045.105)
 ```
 chromedriver -v
+```
+- Fechar esse cmder ou terminal
+
+## :hammer_and_wrench: Excluir geckodriver que já foi baixado em algum outro momento
+- Na janela do "Windows Explorer" acessar o diretório "C:\Ruby\bin", procurar e excluir "geckodriver.exe"
+- Acessar o diretório "C:\Windows", procurar e excluir "geckodriver.exe"
+- Acessar o diretório "C:\Windows\System32", procurar e excluir "geckodriver.exe"
+
+
+## :hammer_and_wrench: Instalar novo geckodriver 
+- Verificar versão do navegador Firefox (Ex.: 124.0.1 (64-bits))
+  - Menu > Ajuda > Sobre o Firefox
+- Acessar o site com a versão "Latest" do [geckodriver](https://github.com/mozilla/geckodriver/releases/latest) (Ex.: v0.34.0) compatível com a versão do Firefox verificada anteriormente 
+- Em "Assets", clicar em "geckodriver...win64.zip"
+  - Ex.: https://github.com/mozilla/geckodriver/releases/download/v0.34.0/geckodriver-v0.34.0-win64.zip
+- Baixar o arquivo "geckodriver...win64.zip"
+  - Descompactar o arquivo
+  - NÃO executar o executável "geckodriver.exe"
+  - Mover o executável "geckodriver.exe" para o diretório "C:\Windows\System32"
+		
+- Abrir um novo cmder ou outro terminal de preferência, informar o comando abaixo para confirmar se o novo geckodriver realmente foi instalado, e verificar se a versão apresentada é a mesma no qual foi baixada no site com a versão "Latest" anteriormente (Ex.: v0.34.0)
+```
+geckodriver --version
 ```
 - Fechar esse cmder ou terminal
 
@@ -273,9 +296,34 @@ bundle exec cucumber
 ```
 
 ## :triangular_flag_on_post: Ou executar os testes automatizados web no navegador chrome em modo headless (2° plano) e Gerar os resultados dos testes no computador
-- No cmder aberto anteriormente, informar o comando abaixo para executar todas as features e/ou cenários do projeto em modo headless (2° plano - mesmo modo e comando que é utilizado no "Passo 4" da "Pipeline Testes Automatizados Web Front ServeRest Ruby" em ".github > workflows > [workflow-testes-automatizados-web-front-serve-rest-ruby.yml](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/.github/workflows/workflow-testes-automatizados-web-front-serve-rest-ruby.yml)" no GitHub Actions) e Gerar os resultados dos testes no computador:
+- No cmder aberto anteriormente, informar o comando abaixo para executar todas as features e/ou cenários do projeto em modo headless (2° plano - mesmo modo e comando que é utilizado no "Passo 4" do job "testes-automatizados-web-front-serve-rest-ruby-chrome" da "Pipeline Testes Automatizados Web Front ServeRest Ruby" em ".github > workflows > [workflow-testes-automatizados-web-front-serve-rest-ruby.yml](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/.github/workflows/workflow-testes-automatizados-web-front-serve-rest-ruby.yml)" no GitHub Actions) e Gerar os resultados dos testes no computador:
 ```
 bundle exec cucumber -p ci
+```
+
+## :triangular_flag_on_post: Executar os testes automatizados web no navegador firefox na interface gráfica e Gerar os resultados dos testes no computador
+- No cmder aberto anteriormente, informar o comando abaixo para executar cada feature e/ou cada cenário individualmente do projeto:
+```
+bundle exec cucumber -p ff -t @nome_tag
+```
+Ex. 1:
+```
+bundle exec cucumber -p ff -t @login_entrar
+```
+Ex. 2: 
+```
+bundle exec cucumber -p ff -t @pesquisar_produto_nao_cadastrado
+```
+
+- Ou informar o comando abaixo para executar todas as features e/ou cenários do projeto:
+```
+bundle exec cucumber -p ff
+```
+
+## :triangular_flag_on_post: Ou executar os testes automatizados web no navegador firefox em modo headless (2° plano) e Gerar os resultados dos testes no computador
+- No cmder aberto anteriormente, informar o comando abaixo para executar todas as features e/ou cenários do projeto em modo headless (2° plano - mesmo modo e comando que é utilizado no "Passo 4" do job "testes-automatizados-web-front-serve-rest-ruby-firefox" da "Pipeline Testes Automatizados Web Front ServeRest Ruby" em ".github > workflows > [workflow-testes-automatizados-web-front-serve-rest-ruby.yml](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/.github/workflows/workflow-testes-automatizados-web-front-serve-rest-ruby.yml)" no GitHub Actions) e Gerar os resultados dos testes no computador:
+```
+bundle exec cucumber -p ci_ff
 ```
 
 ---

@@ -5,7 +5,6 @@
     },
     "invalido1": {
         "email_invalido_vazio1": "deixar-apenas-as-aspas-duplas",
-        "senha_invalida_vazia1": "deixar-apenas-as-aspas-duplas",
         "email_invalido_dominio_sem_ponto1": "informar-email-usuario-invalido-dominio-sem-ponto@outlook",
         "senha_valida2": "informar-senha-usuario-valido",
         "email_invalido_nao_cadastrado1": "informar-email-usuario-invalido-nao-cadastrado@gmail.com",
