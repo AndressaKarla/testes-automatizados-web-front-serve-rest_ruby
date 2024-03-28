@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  testes-automatizados-web-front-serve-rest-ruby-chrome:
+  ruby-chrome:
       # agente de execução/runner do tipo máquina virtual bem enxuta, sem interface gráfica
       runs-on: ubuntu-latest
 
@@ -52,8 +52,8 @@ jobs:
             path: ./relatorios/screenshots
             retention-days: 30
 
-  testes-automatizados-web-front-serve-rest-ruby-firefox:
-      needs: testes-automatizados-web-front-serve-rest-ruby-chrome
+  ruby-firefox:
+      needs: ruby-chrome
       runs-on: ubuntu-latest
 
       steps:
