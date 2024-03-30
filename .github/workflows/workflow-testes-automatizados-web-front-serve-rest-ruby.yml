@@ -53,6 +53,7 @@ jobs:
             retention-days: 30
 
   ruby-firefox:
+      # job "ruby-firefox" somente é executado se o job anterior "ruby-chrome" for executado com sucesso
       needs: ruby-chrome
       runs-on: ubuntu-latest
 

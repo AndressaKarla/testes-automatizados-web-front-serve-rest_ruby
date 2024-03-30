@@ -1,7 +1,6 @@
 {
     "produto_valido1": {
-        "produto_cadastrado1": "Logitech MX Vertical",
-        "produto_cadastrado2": "Samsung 60 polegadas"
+        "produto_cadastrado1": "Samsung 60 polegadas"
     },
     "produto_invalido1": {
         "produto_nao_cadastrado1": "Produto Não Cadastrado"
