@@ -13,7 +13,7 @@ on:
 jobs:
   ruby-chrome:
       # agente de execução/runner do tipo máquina virtual bem enxuta, sem interface gráfica
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-22.04
 
       steps:
       - name: Passo 1 - Obter cópia do código-fonte do repositório
@@ -55,7 +55,7 @@ jobs:
   ruby-firefox:
       # job "ruby-firefox" somente é executado se o job anterior "ruby-chrome" for executado com sucesso
       needs: ruby-chrome
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-22.04
 
       steps:
       - name: Passo 1 - Obter cópia do código-fonte do repositório
