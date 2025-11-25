@@ -23,10 +23,11 @@ end
 
 Dado('que na seção Cadastrar Usuários eu clique no botão Cadastrar') do
     home.botao_cadastrar_secao_cadastrar_usuarios.click
+    sleep 2
 end
 
 Dado('que eu esteja na tela Cadastro de usuários') do
-    sleep 5
+    sleep 2
     expect(home.current_url).to include('/admin/cadastrarusuarios')
 end
 
