@@ -1,13 +1,15 @@
 class CadastroUsuarios < SitePrism::Page
     include RSpec::Matchers
     include Capybara::DSL
-    
+
+    set_url '/admin/cadastrarusuarios'
+
     element :campo_nome, '#nome'
     element :campo_email, 'input[name="email"]'
     element :campo_senha, 'input[data-testid="password"]'
     element :opcao_admin, 'div[class="form-check"]'
     element :botao_cadastrar, 'button[data-testid="cadastrarUsuario"]'
-    
+
     def cadastrar_usuario_padrao(nome, email, senha)
         campo_nome.click
         campo_nome.set nome
@@ -17,7 +19,7 @@ class CadastroUsuarios < SitePrism::Page
 
         campo_senha.click
         campo_senha.set senha
-    
+
         botao_cadastrar.click
     end
 end
