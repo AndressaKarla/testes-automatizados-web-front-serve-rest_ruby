@@ -13,11 +13,11 @@ on:
 jobs:
   ruby-chrome:
       # agente de execução/runner do tipo máquina virtual bem enxuta, sem interface gráfica
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-22.04
 
       steps:
       - name: Passo 1 - Obter cópia do código-fonte do repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Passo 2 - Redirecionar os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", para os arquivos "login.json", "usuario.json", etc
         run: |
@@ -35,7 +35,7 @@ jobs:
         run: bundle exec cucumber -p ci
 
       - name: Passo 5 - Armazenar os resultados dos testes em relatório html
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         # expressão condicional para que sempre seja executado independentemente dos resultados dos steps anteriores
         if: ${{ always() }}
         with: 
@@ -45,7 +45,7 @@ jobs:
             retention-days: 30
             
       - name: Passo 6 - Armazenar os resultados dos testes em screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with: 
             name: screenshots_chrome
@@ -55,11 +55,11 @@ jobs:
   ruby-firefox:
       # job "ruby-firefox" somente é executado se o job anterior "ruby-chrome" for executado com sucesso
       needs: ruby-chrome
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-22.04
 
       steps:
       - name: Passo 1 - Obter cópia do código-fonte do repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Passo 2 - Redirecionar os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", para os arquivos "login.json", "usuario.json", etc
         run: |
@@ -76,7 +76,7 @@ jobs:
         run: bundle exec cucumber -p ci_ff
 
       - name: Passo 5 - Armazenar os resultados dos testes em relatório html
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with: 
             name: relatorio_html_firefox
@@ -84,7 +84,7 @@ jobs:
             retention-days: 30
             
       - name: Passo 6 - Armazenar os resultados dos testes em screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with: 
             name: screenshots_firefox
