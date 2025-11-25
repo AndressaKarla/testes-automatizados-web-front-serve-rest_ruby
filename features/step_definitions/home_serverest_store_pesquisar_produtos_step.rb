@@ -1,6 +1,6 @@
-# Esquema do Cenario: Validar Pesquisar Produtos - produto cadastrado
+# Esquema do Cenario: Pesquisar produto (produto cadastrado) - Apresentar produto pesquisado anteriormente
 Quando('no campo Pesquisar Produtos eu informar um produto cadastrado {string}') do |produto|
-    @produto_fixture = carregar_fixture('produto') 
+    @produto_fixture = carregar_fixture('produto')
     home_serverest_store.pesquisar_produto(@produto_fixture['produto_valido1'][produto])
 end
 
@@ -11,9 +11,9 @@ Então('na seção Produtos deverá apresentar o produto pesquisado anteriorment
     scroll_to(home_serverest_store.rolagem_tela, align: :bottom)
 end
 
-# Esquema do Cenario: Validar Pesquisar Produtos - produto não cadastrado 
+# Esquema do Cenario: Pesquisar produto (produto não cadastrado) - Apresentar texto de nenhum produto encontrado
 Quando('no campo Pesquisar Produtos eu informar um produto NÃO cadastrado {string}') do |produto|
-    @produto_fixture = carregar_fixture('produto') 
+    @produto_fixture = carregar_fixture('produto')
     home_serverest_store.pesquisar_produto(@produto_fixture['produto_invalido1'][produto])
 end
 

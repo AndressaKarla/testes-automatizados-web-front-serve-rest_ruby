@@ -1,15 +1,15 @@
-default: -p pretty --publish-quiet -p html -p dev -p chrome
+default: -p pretty --publish-quiet -p html -p prod -p chrome
 
 pretty: --format pretty
-dev: ENVIRONMENT=dev
+prod: ENVIRONMENT=prod
 local: ENVIRONMENT=local
-ff: -p pretty --publish-quiet -p html -p dev -p firefox
-ci: -p pretty --publish-quiet -p html -p dev -p chrome_headless 
-ci_ff: -p pretty --publish-quiet -p html -p dev -p firefox_headless
+ff: -p pretty --publish-quiet -p html -p prod -p firefox
+ci: -p pretty --publish-quiet -p html -p prod -p chrome_headless 
+ci_ff: -p pretty --publish-quiet -p html -p prod -p firefox_headless
 
 chrome: BROWSER=chrome
 chrome_headless: BROWSER=chrome_headless
 firefox: BROWSER=firefox
 firefox_headless: BROWSER=firefox_headless
 
-html: --format html --out=relatorios/relatorio-web-front-serve-rest-ruby.html
+html: --format html --out=reports/ruby-cucumber-web-front-serve-rest-report-html.html

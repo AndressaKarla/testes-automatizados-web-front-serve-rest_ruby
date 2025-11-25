@@ -1,13 +1,13 @@
 # language: pt
 
-@login_cadastre_se
-Funcionalidade: Tela Login - Opção Cadastre-se
-	Como usuário da Tela Login do front do ServeRest
-	Quero clicar na Opção Cadastre-se
+@cadastro_usuarios
+Funcionalidade: Cadastrar Usuários
+	Como usuário da tela Login do front do ServeRest
+	Quero clicar na opção Cadastre-se
 	Para validar o comportamento da funcionalidade
 
-@login_cadastre_se_admin
-Esquema do Cenario: Validar Cadastro Administrador
+@cadastro_usuario_admin
+Esquema do Cenario: Cadastrar usuário administrador válido ou inválido - Apresentar mensagens de obrigatoriedade ou de cadastro realizado com sucesso
 	Dado que eu acesse a tela de Login do front do ServeRest
 	E eu clique na opção Cadastre-se
 	E eu esteja na tela Cadastro

@@ -1,13 +1,13 @@
 # language: pt
 
 @pesquisar_produtos
-Funcionalidade: Tela Home Serverest Store - Pesquisar Produtos
-	Como usuário da Tela Home Serverest Store do front do ServeRest
+Funcionalidade: Home Serverest Store - Pesquisar Produtos
+	Como usuário da tela Home Serverest Store do front do ServeRest
 	Quero informar o campo Pesquisar Produtos 
 	Para validar o comportamento da funcionalidade
 
 @pesquisar_produto_cadastrado
-Esquema do Cenario: Validar Pesquisar Produtos - produto cadastrado
+Esquema do Cenario: Pesquisar produto (produto cadastrado) - Apresentar produto pesquisado anteriormente
 	Dado que eu acesse a tela de Login do front do ServeRest
 	E que eu informe os campos de email e senha de um usuário administrador
 	E que eu esteja na tela Home
@@ -26,7 +26,7 @@ Esquema do Cenario: Validar Pesquisar Produtos - produto cadastrado
 		| nome_valido3 | email_valido2 | senha_valida3 | produto_cadastrado1 |
 
 @pesquisar_produto_nao_cadastrado
-Esquema do Cenario: Validar Pesquisar Produtos - produto não cadastrado 
+Esquema do Cenario: Pesquisar produto (produto não cadastrado) - Apresentar texto de nenhum produto encontrado 
 	Dado que eu acesse a tela de Login do front do ServeRest
 	E que eu informe os campos de email e senha de um usuário administrador
 	E que eu esteja na tela Home

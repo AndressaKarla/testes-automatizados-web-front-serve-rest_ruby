@@ -1,29 +1,30 @@
 ---
-# Projeto de Testes Automatizados Web | Ruby | Cucumber | Capybara | SitePrism | Rspec | HTTParty | GitHub Actions :test_tube:
+# :test_tube: Projeto de Testes Funcionais Automatizados Web | Ruby v3.1.2 | Cucumber | Capybara | SitePrism | Rspec | HTTParty | GitHub Actions 
 ---
 # :information_source: Introdução
-Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um ambiente de desenvolvimento no ["front"](https://front.serverest.dev) e na ["API REST"](https://serverest.dev) do ["ServeRest"](https://github.com/ServeRest) que simula uma loja virtual, com o objetivo de me aprofundar um pouco mais nos estudos sobre testes automatizados web em Ruby nas ferramentas Cucumber, Capybara, SitePrism, Rspec, HTTParty e GitHub Actions.
+Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um ambiente de produção no ["front"](https://front.serverest.dev) e na ["API REST"](https://serverest.dev) do ["ServeRest"](https://github.com/ServeRest) que simula uma loja virtual, nos navegadores Chrome (chromedriver) e Firefox (geckodriver); nos Sistemas Operacionais Windows 10, 11 e Linux Ubuntu 22.04, com o objetivo de praticar ainda mais testes automatizados web em Ruby v3.1.2, Cucumber, Capybara, SitePrism, Rspec, HTTParty e GitHub Actions.
 
 ---
-# :dart: Executar testes em um ambiente de desenvolvimento e Gerar os resultados dos testes no GitHub Actions
+# :warning: _Instruções considerando Windows 10, para outras versões do Windows ou outros sistemas operacionais talvez seja necessário algumas adaptações_
 
+# :dart: Executar testes em um ambiente de produção e Gerar os resultados dos testes no GitHub Actions
 ## :triangular_flag_on_post: Executar os testes automatizados web no navegador chrome, firefox, etc em modo headless (2° plano) e Gerar os resultados dos testes no GitHub Actions
 - Nesse repositório, acessar a aba "Actions"
 - Na seção "Actions", clicar em "Pipeline Testes Automatizados Web Front ServeRest Ruby"
-- Em "This workflow has a workflow_dispatch event trigger.", clicar em "Run workflow" > "Run workflow" para executar os testes automatizados web no navegador chrome, firefox, etc em modo headless (2° plano) no GitHub Actions [com os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", etc (baseado nos arquivos ["login.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/login.example.json), ["usuario.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/usuario.example.json), etc, e configurados na aba "Settings" desse repositório > "Secrets and variables" > "Actions" > "Secrets" > "Repository secrets") que foram redirecionados para os arquivos "login.json", "usuario.json"]
+- Em "This workflow has a workflow_dispatch event trigger.", clicar em "Run workflow" > "Run workflow" para executar os testes automatizados web no navegador chrome, firefox, etc em modo headless (2° plano) no GitHub Actions [com os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", etc (baseado nos arquivos ["login.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/login.example.json), ["usuario.example.json"](https://github.com/AndressaKarla/testes-automatizados-web-front-serve-rest_ruby/blob/main/features/support/fixtures/usuario.example.json), etc, e configurados na aba "Settings" desse repositório > "Secrets and variables" > "Actions" > "Secrets" > "Repository secrets") que foram redirecionados para os fixtures "login.json", "usuario.json"]
 - Após o término da execução, clicar na run "Pipeline Testes Automatizados Web Front ServeRest Ruby"
-- Na seção "Artifacts", clicar em "relatorio_html_chrome", "relatorio_html_firefox", etc
-- Na janela aberta, escolher um diretório para baixar a pasta compactada "relatorio_html_chrome.zip", "relatorio_html_firefox.zip", etc
+- Na seção "Artifacts", clicar em "report_html_chrome", "report_html_firefox", etc
+- Na janela aberta, escolher um diretório para baixar a pasta compactada "report_html_chrome.zip", "report_html_firefox.zip", etc
 - Na seção "Artifacts", clicar em "screenshots_chrome", "screenshots_firefox", etc
 - Na janela aberta, escolher um diretório para baixar a pasta compactada "screenshots_chrome.zip", "screenshots_firefox.zip", etc
 
 
-# Verificar no navegador padrão o relatório html gerado e armazenado anteriormente no GitHub Actions e descompactado no computador :female_detective:
+# Verificar no navegador padrão o report html gerado e armazenado anteriormente no GitHub Actions e descompactado no computador :female_detective:
 - Abrir uma janela do "Windows Explorer"
-- Acessar o diretório onde foi baixada a pasta compactada "relatorio_html_chrome.zip", "relatorio_html_firefox.zip" anteriormente
+- Acessar o diretório onde foi baixada a pasta compactada "report_html_chrome.zip", "report_html_firefox.zip" anteriormente
 - Descompactar a pasta
-- Acessar a pasta descompactada "relatorio_html_chrome", "relatorio_html_firefox.zip", etc
-- Clicar 2 vezes sob o relatório "relatorio-web-front-serve-rest-ruby.html" gerado e armazenado anteriormente no GitHub Actions e descompactado para ser aberto e verificado no navegador padrão no computador
+- Acessar a pasta descompactada "report_html_chrome", "report_html_firefox.zip", etc
+- Clicar 2 vezes sob o arquivo "ruby-cucumber-web-front-serve-rest-report-html.html" gerado e armazenado anteriormente no GitHub Actions e descompactado para ser aberto e verificado no navegador padrão no computador
 
 
 # Verificar os screenshots gerados e armazenados anteriormente no GitHub Actions e descompactados no computador :female_detective:
@@ -41,11 +42,11 @@ Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um
 - nome_cenariox-dd_mm_aaaa-hhx_mmx_ssx.png
 ```  
   
-Ex.: testes_passaram > 10_11_2023 
+Ex.: testes_passaram > 25_11_2025 
 ```
-- validar_cadastro_administrador-10_11_2023-03_19_10.png
+- cadastrar_usuário_administrador_válido_ou_inválido_-_apresentar_mensagens_...-25_11_2025-03_19_10.png
 . . .
-- validar_pesquisar_produtos_-_produto_não_cadastrado-10_11_2023-03_19_29.png
+- pesquisar_produto_(produto_não_cadastrado)_-_apresentar_...-25_11_2025-03_19_29.png
 ```
 
 ## :x: Em caso de falha dos testes, verificar os screenshots da pasta "testes_falharam"
@@ -56,11 +57,11 @@ Ex.: testes_passaram > 10_11_2023
 - nome_cenariox-dd_mm_aaaa-hhx_mmx_ssx.png
 ```  
 
-Ex.: testes_falharam > 10_11_2023
+Ex.: testes_falharam > 25_11_2025
 ```
-- validar_cadastro_administrador-10_11_2023-03_47_21.png
+- cadastrar_usuário_administrador_válido_ou_inválido_-_apresentar_mensagens_...-25_11_2025-03_47_21.png
 . . .
-- validar_pesquisar_produtos_-_produto_não_cadastrado-10_11_2023-03_47_40.png
+- pesquisar_produto_(produto_não_cadastrado)_-_apresentar_...-25_11_2025-03_47_40.png
 ``` 
 
 ---
@@ -110,7 +111,7 @@ chrome://settings/help
   - NÃO executar o executável "chromedriver.exe"
   - Mover o executável "chromedriver.exe" para o diretório "C:\Windows\System32"
 		
-- Abrir um novo cmder ou outro terminal de preferência, informar o comando abaixo para confirmar se o novo chromedriver realmente foi instalado, e verificar se a versão apresentada é a mesma no qual foi baixada no site com a versão "Stable" anteriormente (Ex.: ChromeDriver 119.0.6045.105)
+- Abrir um novo cmder ou outro terminal, informar o comando abaixo para confirmar se o novo chromedriver realmente foi instalado, e verificar se a versão apresentada é a mesma no qual foi baixada no site com a versão "Stable" anteriormente (Ex.: ChromeDriver 119.0.6045.105)
 ```
 chromedriver -v
 ```
@@ -133,7 +134,7 @@ chromedriver -v
   - NÃO executar o executável "geckodriver.exe"
   - Mover o executável "geckodriver.exe" para o diretório "C:\Windows\System32"
 		
-- Abrir um novo cmder ou outro terminal de preferência, informar o comando abaixo para confirmar se o novo geckodriver realmente foi instalado, e verificar se a versão apresentada é a mesma no qual foi baixada no site com a versão "Latest" anteriormente (Ex.: v0.34.0)
+- Abrir um novo cmder ou outro terminal, informar o comando abaixo para confirmar se o novo geckodriver realmente foi instalado, e verificar se a versão apresentada é a mesma no qual foi baixada no site com a versão "Latest" anteriormente (Ex.: v0.34.0)
 ```
 geckodriver --version
 ```
@@ -159,7 +160,7 @@ geckodriver --version
 - Após o término da instalação, teclar "Enter" novamente
 - Fechar esse terminal
 
-- Abrir um novo cmder ou outro terminal de preferência, informar o comando abaixo para confirmar se o ruby realmente foi instalado
+- Abrir um novo cmder ou outro terminal, informar o comando abaixo para confirmar se o ruby realmente foi instalado
 ```
 ruby -v
 ```
@@ -185,7 +186,7 @@ cd "<diretório copiado anteriormente>"
 ```
 Ex.: 
 ```
-cd "C:\Users\usuario\Desktop"
+cd "C:\Projetos\Automação"
 ```
 - Informar o comando abaixo para clonar este repositório via "HTTPS"
 
@@ -207,7 +208,7 @@ cd testes-automatizados-web-front-serve-rest_ruby
 ```
 Ex.: 
 ```
-C:\Users\usuario\Desktop\testes-automatizados-web-front-serve-rest_ruby
+C:\Projetos\Automação\testes-automatizados-web-front-serve-rest_ruby
 ```
 - Informar o comando abaixo para instalar todas as dependências necessárias do projeto 
 ```
@@ -221,24 +222,14 @@ bundle install
 - Em "Profile name", informar "Ruby"
 - Clicar na opção "Create"
 - Clicar na opção "Extensions", informar e instalar as extensões abaixo:
-  - One Dark Pro
-    - binaryify
-      - Clicar na opção "One Dark Pro Darker" apresentada para habilitar a extensão
+  - Hyper Term Theme
+    - HasseNasse
+      - Clicar na opção "Hyper Term Black" apresentada para habilitar a extensão
   - Material Icon Theme
     - Philipp Kief
-      - Clicar na opção "Material Icon Theme" apresentada para habilitar a extensão
-  - Ruby 
-    - Peng Lv
-  - VsCode Ruby 
-    - Stafford Brunk
-  - Cucumber 
-    - Cucumber for Visual Studio Code
-  - Cucumber (Gherkin) Full Support 
-    - Alexander Krechik
-  - Feature Syntax Highlight and Snippets (Cucumber/Gherkin)
-    - Roland Orosz
-  - Gherkin Indent 
-    - Aravind Kumar
+      - Clicar em "Material Icon Theme" apresentada para habilitar a extensão 
+  - Simple Ruby ERB 
+    - Victor Ortiz Heredia
   - Snippets and Syntax Highlight for Gherkin (Cucumber) 
     - Euclidity
     
@@ -262,9 +253,10 @@ code .
   - Salvar o arquivo "usuario.json" com os dados informados anteriormente
   
 ---
-# :dart: Executar testes em um ambiente de desenvolvimento e Gerar os resultados dos testes no computador
+# :dart: Executar testes em um ambiente de produção e Gerar os resultados dos testes no computador
 
 ## :triangular_flag_on_post: Executar os testes automatizados web no navegador chrome na interface gráfica e Gerar os resultados dos testes no computador
+- Ter o navegador Chrome instalado
 - Abrir uma janela do "Windows Explorer"
 - Acessar o diretório onde foi clonado o projeto “testes-automatizados-web-front-serve-rest_ruby”
 - Copiar esse diretório 
@@ -275,7 +267,7 @@ cd "<diretório copiado anteriormente>"
 ```
 Ex.: 
 ```
-cd "C:\Users\usuario\Desktop\testes-automatizados-web-front-serve-rest_ruby"
+cd "C:\Projetos\Automação\testes-automatizados-web-front-serve-rest_ruby"
 ```
 - Informar o comando abaixo para executar cada feature e/ou cada cenário individualmente do projeto:
 ```
@@ -283,7 +275,7 @@ bundle exec cucumber -t @nome_tag
 ```
 Ex. 1:
 ```
-bundle exec cucumber -t @login_entrar
+bundle exec cucumber -t @login
 ```
 Ex. 2: 
 ```
@@ -302,13 +294,14 @@ bundle exec cucumber -p ci
 ```
 
 ## :triangular_flag_on_post: Executar os testes automatizados web no navegador firefox na interface gráfica e Gerar os resultados dos testes no computador
+- Ter o navegador Firefox instalado
 - No cmder aberto anteriormente, informar o comando abaixo para executar cada feature e/ou cada cenário individualmente do projeto:
 ```
 bundle exec cucumber -p ff -t @nome_tag
 ```
 Ex. 1:
 ```
-bundle exec cucumber -p ff -t @login_entrar
+bundle exec cucumber -p ff -t @login
 ```
 Ex. 2: 
 ```
@@ -341,45 +334,45 @@ code .
 ## :bookmark_tabs: Screenshots no computador
 
 ## :heavy_check_mark: Em caso de sucesso dos testes, verificar os screenshots da pasta "testes_passaram"
-- No VS Code aberto anteriormente, acessar "relatorios > screenshots > testes_passaram > dd_mm_aaaa" 
+- No VS Code aberto anteriormente, acessar "reports > screenshots > testes_passaram > dd_mm_aaaa" 
 ```
 - nome_cenario1-dd_mm_aaaa-hh1_mm1_ss1.png
   . . .
 - nome_cenariox-dd_mm_aaaa-hhx_mmx_ssx.png
 ```  
   
-Ex.: relatorios > screenshots > testes_passaram > 10_11_2023 
+Ex.: reports > screenshots > testes_passaram > 25_11_2025 
 ```
-- validar_cadastro_administrador-10_11_2023-03_19_10.png
+- cadastrar_usuário_administrador_válido_ou_inválido_-_apresentar_mensagens_...-25_11_2025-03_19_10.png
 . . .
-- validar_pesquisar_produtos_-_produto_não_cadastrado-10_11_2023-03_19_29.png
+- pesquisar_produto_(produto_não_cadastrado)_-_apresentar_...-25_11_2025-03_19_29.png
 ```
 
 ## :x: Em caso de falha dos testes, verificar os screenshots da pasta "testes_falharam"
-- No VS Code aberto anteriormente, acessar "relatorios > screenshots > testes_falharam > dd_mm_aaaa" 
+- No VS Code aberto anteriormente, acessar "reports > screenshots > testes_falharam > dd_mm_aaaa" 
 ```
 - nome_cenario1-dd_mm_aaaa-hh1_mm1_ss1.png
   . . .
 - nome_cenariox-dd_mm_aaaa-hhx_mmx_ssx.png
 ```  
 
-Ex.: relatorios > screenshots > testes_falharam > 10_11_2023
+Ex.: reports > screenshots > testes_falharam > 25_11_2025
 ```
-- validar_cadastro_administrador-10_11_2023-03_47_21.png
+- cadastrar_usuário_administrador_válido_ou_inválido_-_apresentar_mensagens_...-25_11_2025-03_47_21.png
 . . .
-- validar_pesquisar_produtos_-_produto_não_cadastrado-10_11_2023-03_47_40.png
+- pesquisar_produto_(produto_não_cadastrado)_-_apresentar_...-25_11_2025-03_47_40.png
 ``` 
 
 
-## :bookmark_tabs: Relatório html no computador
-- No VS Code aberto anteriormente, acessar "relatorios > relatorio-web-front-serve-rest-ruby.html" 
-- Clicar com botão direito do mouse sob o arquivo "relatorio-web-front-serve-rest-ruby.html" > "Reveal in File Explorer" 
-- Na janela do "Windows Explorer" aberta automaticamente, clicar 2 vezes sob o arquivo "relatorio-web-front-serve-rest-ruby.html" para ser aberto e visualizado no navegador padrão
+## :bookmark_tabs: Report html no computador
+- No VS Code aberto anteriormente, acessar "reports > ruby-cucumber-web-front-serve-rest-report-html.html" 
+- Clicar com botão direito do mouse sob o arquivo "ruby-cucumber-web-front-serve-rest-report-html.html" > "Reveal in File Explorer" 
+- Na janela do "Windows Explorer" aberta automaticamente, clicar 2 vezes sob o arquivo "ruby-cucumber-web-front-serve-rest-report-html.html" para ser aberto e visualizado no navegador padrão
 
 
 ---
 ### Feito com ❤️ por Andressa Karla :wave: 
 
-### [![Medium](https://img.shields.io/badge/-Medium-595D60?style=plastic&logo=Medium&logoColor=white&link=https://medium.com/@andressakarla)](https://medium.com/@andressakarla) [![Linkedin](https://img.shields.io/badge/-LinkedIn-595D60?style=plastic&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/andressakarla//)](https://www.linkedin.com/in/andressakarla/)
+### [![Medium](https://img.shields.io/badge/-Medium-595D60?style=plastic&logo=Medium&logoColor=white&link=https://medium.com/@andressakarla)](https://medium.com/@andressakarla) [![Linkedin](https://img.shields.io/badge/-LinkedIn-595D60?style=plastic&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/andressakarla/)](https://www.linkedin.com/in/andressakarla/)
 
 ---

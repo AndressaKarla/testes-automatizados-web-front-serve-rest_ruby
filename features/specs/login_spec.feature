@@ -1,13 +1,13 @@
 # language: pt
 
-@login_entrar
-Funcionalidade: Tela Login - Botão Entrar
-	Como usuário da Tela Login do front do ServeRest
-	Quero clicar no Botão Entrar
+@login
+Funcionalidade: Login
+	Como usuário da tela Login do front do ServeRest
+	Quero clicar no botão Entrar
 	Para validar o comportamento da funcionalidade
 
-@login_entrar_admin
-Esquema do Cenario: Validar Login usuário administrador
+@login_admin
+Esquema do Cenario: Login com usuário administrador - Apresentar tela Home com textos de boas vindas e de administrar ecommerce
 	Dado que eu acesse a tela de Login do front do ServeRest
 	Quando eu informar os campos de "<email>" e "<senha>" de um usuário administrador
 	Então deverá apresentar a tela Home com o texto Bem Vindo
@@ -16,8 +16,8 @@ Esquema do Cenario: Validar Login usuário administrador
 		| email         | senha         |
 		| email_valido1 | senha_valida1 |
 
-@login_entrar_padrao
-Esquema do Cenario: Validar Login usuário padrão
+@login_padrao
+Esquema do Cenario: Login com usuário padrão - Apresentar tela Home Serverest Store
 	Dado que eu acesse a tela de Login do front do ServeRest
 	E que eu informe os campos de email e senha de um usuário administrador
 	E que eu esteja na tela Home
@@ -33,8 +33,8 @@ Esquema do Cenario: Validar Login usuário padrão
 		| nome         | email         | senha         |
 		| nome_valido3 | email_valido2 | senha_valida3 |
 
-@login_entrar_invalido
-Esquema do Cenario: Validar Login usuários inválidos 
+@login_invalido
+Esquema do Cenario: Login com usuários inválidos - Apresentar mensagens de obrigatoriedade ou de campos inválidos
 	Dado que eu acesse a tela de Login do front do ServeRest
 	Quando eu informar os campos de "<email>", "<senha>" incorretamente
 	Então na tela Login deverá apresentar a mensagem "<mensagem>"
