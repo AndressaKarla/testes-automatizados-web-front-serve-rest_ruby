@@ -23,12 +23,10 @@ end
 
 Dado('que na seção Cadastrar Usuários eu clique no botão Cadastrar') do
     home.botao_cadastrar_secao_cadastrar_usuarios.click
-    sleep 2
 end
 
 Dado('que eu esteja na tela Cadastro de usuários') do
-    sleep 2
-    expect(home.current_url).to include('/admin/cadastrarusuarios')
+    cadastro_usuarios.wait_until_campo_nome_visible
 end
 
 Dado('que eu informe os campos de {string}, {string} e {string} e eu NÃO informe a opcão Cadastrar como administrador') do |nome, email, senha|
