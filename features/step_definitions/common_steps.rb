@@ -26,7 +26,7 @@ Dado('que na seção Cadastrar Usuários eu clique no botão Cadastrar') do
 end
 
 Dado('que eu esteja na tela Cadastro de usuários') do
-    sleep 2
+    sleep 3
     expect(home.current_url).to include('/admin/cadastrarusuarios')
 end
 
