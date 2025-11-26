@@ -9,7 +9,6 @@ class CadastroUsuarios < SitePrism::Page
     element :botao_cadastrar, 'button[data-testid="cadastrarUsuario"]'
 
     def cadastrar_usuario_padrao(nome, email, senha)
-        sleep 5
         campo_nome.click
         campo_nome.set nome
 
