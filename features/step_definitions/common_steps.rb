@@ -30,7 +30,7 @@ end
 
 Dado('que eu informe os campos de {string}, {string} e {string} e eu NÃO informe a opcão Cadastrar como administrador') do |nome, email, senha|
     @usuario_fixture = carregar_fixture('usuario')
-    sleep 10
+    puts @usuario_fixture
     cadastro_usuarios.cadastrar_usuario_padrao(@usuario_fixture['padrao_valido1'][nome], @usuario_fixture['padrao_valido1'][email], @usuario_fixture['padrao_valido1'][senha])
 end
 
