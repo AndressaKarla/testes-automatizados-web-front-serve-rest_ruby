@@ -17,7 +17,8 @@ Dado('que eu informe os campos de email e senha de um usuário administrador') d
 end
 
 Dado('que eu esteja na tela Home') do
-    expect(page).to have_current_path(/\/admin\/home/, wait: 10)
+    sleep 2
+    expect(home.current_url).to include('/admin/home')
 end
 
 Dado('que na seção Cadastrar Usuários eu clique no botão Cadastrar') do
@@ -25,17 +26,18 @@ Dado('que na seção Cadastrar Usuários eu clique no botão Cadastrar') do
 end
 
 Dado('que eu esteja na tela Cadastro de usuários') do
-    expect(page).to have_current_path(/\/admin\/cadastrarusuarios/, wait: 10)
+    sleep 2
+    expect(home.current_url).to include('/admin/cadastrarusuarios')
 end
 
 Dado('que eu informe os campos de {string}, {string} e {string} e eu NÃO informe a opcão Cadastrar como administrador') do |nome, email, senha|
     @usuario_fixture = carregar_fixture('usuario')
-    puts @usuario_fixture
     cadastro_usuarios.cadastrar_usuario_padrao(@usuario_fixture['padrao_valido1'][nome], @usuario_fixture['padrao_valido1'][email], @usuario_fixture['padrao_valido1'][senha])
 end
 
 Dado('que eu esteja na tela Lista dos usuários') do
-    expect(page).to have_current_path(/\/admin\/listarusuarios/, wait: 10)
+    sleep 2
+    expect(home.current_url).to include('/admin/listarusuarios')
 end
 
 Dado('que eu clique no botão Logout') do
@@ -44,7 +46,8 @@ Dado('que eu clique no botão Logout') do
 end
 
 Dado('que eu esteja na tela de Login do front do ServeRest') do
-    expect(page).to have_current_path(/\/login/, wait: 10)
+    sleep 2
+    expect(home.current_url).to include('/login')
 end
 
 # Esquema do Cenario: Validar Pesquisar Produtos - produto cadastrado
@@ -54,5 +57,6 @@ Dado('que eu informe os campos de {string} e {string} do usuário padrão cadast
 end
 
 Dado('que eu esteja na tela Home Serverest Store') do
-    expect(page).to have_current_path(/\/home/, wait: 10)
+    sleep 2
+    expect(home_serverest_store.current_url).to include('/home')
 end
