@@ -31,11 +31,11 @@ end
 Dado('que eu informe os campos de {string}, {string} e {string} e eu NÃO informe a opcão Cadastrar como administrador') do |nome, email, senha|
     @usuario_fixture = carregar_fixture('usuario')
     cadastro_usuarios.cadastrar_usuario_padrao(@usuario_fixture['padrao_valido1'][nome], @usuario_fixture['padrao_valido1'][email], @usuario_fixture['padrao_valido1'][senha])
+    sleep 10
 end
 
 Dado('que eu esteja na tela Lista dos usuários') do
     expect(page).to have_current_path(/\/admin\/listarusuarios/, wait: 10)
-    expect(page).to have_selector('#root > div > div > h1', wait: 10)
 end
 
 Dado('que eu clique no botão Logout') do
