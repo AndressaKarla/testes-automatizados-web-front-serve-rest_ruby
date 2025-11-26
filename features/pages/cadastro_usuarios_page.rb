@@ -2,8 +2,6 @@ class CadastroUsuarios < SitePrism::Page
     include RSpec::Matchers
     include Capybara::DSL
 
-    set_url '/admin/cadastrarusuarios'
-
     element :campo_nome, '#nome'
     element :campo_email, 'input[name="email"]'
     element :campo_senha, 'input[data-testid="password"]'
