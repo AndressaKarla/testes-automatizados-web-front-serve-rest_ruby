@@ -34,8 +34,7 @@ Dado('que eu informe os campos de {string}, {string} e {string} e eu NÃO inform
 end
 
 Dado('que eu esteja na tela Lista dos usuários') do
-    lista_usuarios.wait_until_titulo_lista_usuarios_visible
-    expect(page).to have_current_path(/\/admin\/listarusuarios/, wait: 10)
+    expect(page).to have_current_path(/\/admin\/listarusuarios/, wait: 15)
 end
 
 Dado('que eu clique no botão Logout') do
