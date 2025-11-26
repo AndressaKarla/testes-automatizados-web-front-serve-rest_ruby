@@ -1,14 +1,14 @@
 module Helpers
-    def carregar_fixture(nome_arquivo)
-        JSON.parse(File.read("features/support/fixtures/#{nome_arquivo}.json"))
+    def carregar_fixture(nome_fixture)
+        JSON.parse(File.read("features/support/fixtures/#{nome_fixture}.json"))
     end
-    
-    def print_screen(nome_arquivo, resultado)
+
+    def print_screen(nome_cenario, resultado)
         data = "#{Time.now.strftime("%d_%m_%Y")}"
         hora = "#{Time.now.strftime("-%d_%m_%Y-%H_%M_%S")}"
 
-        diretorio_arquivo = "relatorios/screenshots/testes_#{resultado}/#{data}"
-        screenshots = "#{diretorio_arquivo}/#{nome_arquivo}#{hora}.png"
+        diretorio_arquivo = "reports/screenshots/testes_#{resultado}/#{data}"
+        screenshots = "#{diretorio_arquivo}/#{nome_cenario}#{hora}.png"
         page.save_screenshot(screenshots)
         attach(screenshots, 'image/png')
     end

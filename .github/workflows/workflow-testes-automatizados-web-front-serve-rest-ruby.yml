@@ -1,6 +1,6 @@
 name: Pipeline Testes Automatizados Web Front ServeRest Ruby
 
-# executa o workflow toda vez que for realizado um push ou pull-request no repositório
+# executa o workflow toda vez que for realizado um push ou pull-request na branch principal (main) no repositório
 on:
   push:
     branches: [ "main" ]
@@ -12,14 +12,14 @@ on:
 
 jobs:
   ruby-chrome:
-      # agente de execução/runner do tipo máquina virtual bem enxuta, sem interface gráfica
-      runs-on: ubuntu-latest
+      # agente de execução/runner 
+      runs-on: ubuntu-22.04
 
       steps:
       - name: Passo 1 - Obter cópia do código-fonte do repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Passo 2 - Redirecionar os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", para os arquivos "login.json", "usuario.json", etc
+      - name: Passo 2 - Redirecionar os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", para os fixtures "login.json", "usuario.json", etc
         run: |
           echo '${{ secrets.LOGIN_ENV }}' > ./features/support/fixtures/login.json
           echo '${{ secrets.USUARIO_ENV }}' > ./features/support/fixtures/usuario.json
@@ -31,37 +31,37 @@ jobs:
           # executa o comando bundle install e armazena as gems instaladas automaticamente
           bundler-cache: true
         
-      - name: Passo 4 - Executar testes no navegador chrome em modo headless (2º plano) em um ambiente de desenvolvimento e Gerar os resultados dos testes
+      - name: Passo 4 - Executar testes no navegador chrome em modo headless (2º plano) em um ambiente de produção e Gerar os resultados dos testes
         run: bundle exec cucumber -p ci
 
-      - name: Passo 5 - Armazenar os resultados dos testes em relatório html
-        uses: actions/upload-artifact@v3
+      - name: Passo 5 - Armazenar os resultados dos testes em report html
+        uses: actions/upload-artifact@v4
         # expressão condicional para que sempre seja executado independentemente dos resultados dos steps anteriores
         if: ${{ always() }}
         with: 
-            name: relatorio_html_chrome
-            path: ./relatorios/relatorio-web-front-serve-rest-ruby.html
-            # armazena o relatório html por 30 dias
+            name: report_html_chrome
+            path: ./reports/ruby-cucumber-web-front-serve-rest-report-html.html
+            # armazena por 30 dias
             retention-days: 30
             
       - name: Passo 6 - Armazenar os resultados dos testes em screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with: 
             name: screenshots_chrome
-            path: ./relatorios/screenshots
+            path: ./reports/screenshots
             retention-days: 30
 
   ruby-firefox:
       # job "ruby-firefox" somente é executado se o job anterior "ruby-chrome" for executado com sucesso
       needs: ruby-chrome
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-22.04
 
       steps:
       - name: Passo 1 - Obter cópia do código-fonte do repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Passo 2 - Redirecionar os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", para os arquivos "login.json", "usuario.json", etc
+      - name: Passo 2 - Redirecionar os conteúdos de "secrets.LOGIN_ENV", "secrets.USUARIO_ENV", para os fixtures "login.json", "usuario.json", etc
         run: |
           echo '${{ secrets.LOGIN_ENV }}' > ./features/support/fixtures/login.json
           echo '${{ secrets.USUARIO_ENV }}' > ./features/support/fixtures/usuario.json
@@ -72,23 +72,23 @@ jobs:
           ruby-version: '3.1.2'
           bundler-cache: true
         
-      - name: Passo 4 - Executar testes no navegador firefox em modo headless (2º plano) em um ambiente de desenvolvimento e Gerar os resultados dos testes
+      - name: Passo 4 - Executar testes no navegador firefox em modo headless (2º plano) em um ambiente de produção e Gerar os resultados dos testes
         run: bundle exec cucumber -p ci_ff
 
-      - name: Passo 5 - Armazenar os resultados dos testes em relatório html
-        uses: actions/upload-artifact@v3
+      - name: Passo 5 - Armazenar os resultados dos testes em report html
+        uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with: 
-            name: relatorio_html_firefox
-            path: ./relatorios/relatorio-web-front-serve-rest-ruby.html
+            name: report_html_firefox
+            path: ./reports/ruby-cucumber-web-front-serve-rest-report-html.html
             retention-days: 30
             
       - name: Passo 6 - Armazenar os resultados dos testes em screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with: 
             name: screenshots_firefox
-            path: ./relatorios/screenshots
+            path: ./reports/screenshots
             retention-days: 30
 
 
