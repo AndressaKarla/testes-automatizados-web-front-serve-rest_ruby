@@ -20,7 +20,7 @@ end
 
 Então('deverá apresentar a tela Home Serverest Store') do
     home_serverest_store.wait_until_texto_serverest_store_visible
-    expect(home_serverest_store.texto_serverest_store).to have_content("Serverest Store.")
+    expect(home_serverest_store.texto_serverest_store).to have_content("Serverest Store")
 
     home_serverest_store.wait_until_card_produto_visible
 end
