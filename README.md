@@ -1,8 +1,9 @@
 ---
-# :test_tube: Projeto de Testes Funcionais Automatizados Web | Ruby v3.1.2 | Cucumber | Capybara | SitePrism | Rspec | HTTParty | GitHub Actions 
+# :test_tube: Projeto de Testes Funcionais Automatizados Web | Ruby v3.1.2 | Selenium Webdriver | Cucumber | Capybara | SitePrism | Rspec | HTTParty | GitHub Actions | GitHub Pages
+[![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/)
 ---
 # :information_source: Introdução
-Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um ambiente de produção no ["front"](https://front.serverest.dev) e na ["API REST"](https://serverest.dev) do ["ServeRest"](https://github.com/ServeRest) que simula uma loja virtual, nos navegadores Chrome (chromedriver) e Firefox (geckodriver); nos Sistemas Operacionais Windows 10, 11 e Linux Ubuntu 22.04, com o objetivo de praticar ainda mais testes automatizados web em Ruby v3.1.2, Cucumber, Capybara, SitePrism, Rspec, HTTParty e GitHub Actions.
+Esse projeto "testes-automatizados-web-front-serve-rest_ruby" é executado em um ambiente de produção no ["front"](https://front.serverest.dev) e na ["API REST"](https://serverest.dev) do ["ServeRest"](https://github.com/ServeRest) que simula uma loja virtual, nos navegadores Chrome (chromedriver) e Firefox (geckodriver); nos Sistemas Operacionais Windows 10, 11 e Linux Ubuntu 22.04, com o objetivo de praticar ainda mais testes automatizados web em Ruby v3.1.2, Selenium Webdriver, Cucumber, Capybara, SitePrism, Rspec, HTTParty, GitHub Actions e GitHub Pages.
 
 ---
 # :warning: _Instruções considerando Windows 10, para outras versões do Windows ou outros sistemas operacionais talvez seja necessário algumas adaptações_
