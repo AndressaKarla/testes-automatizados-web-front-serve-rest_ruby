@@ -71,13 +71,13 @@ jobs:
         uses: actions/download-artifact@v4
         with: 
           name: report_html_chrome
-          path: ./reports/ruby-cucumber-web-front-serve-rest-report-html.html
+          path: ./reports
 
       - name: Passo 9 - Armazenar pages apenas na branch principal (main)
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./reports/ruby-cucumber-web-front-serve-rest-report-html.html
+          path: ./reports
           retention-days: 30
 
       - name: Passo 10 - Deploy/Publicar no Github Pages na "url" configurada automaticamente em "ruby-chrome > environment" apenas na branch principal (main)
