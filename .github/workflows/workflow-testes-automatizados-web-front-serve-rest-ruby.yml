@@ -15,6 +15,14 @@ jobs:
       # agente de execução/runner 
       runs-on: ubuntu-22.04
 
+      permissions:
+        contents: write
+        pages: write
+        id-token: write
+
+      # envionment com "name: github-pages" e "url: https://andressakarla.github.io/testes-automatizados-web-front-serve-rest_ruby/ruby-cucumber-web-front-serve-rest-report-html.html" para deploy/publicar no github pages, configurado automaticamente e aplicado apenas na branch principal (main)
+      environment: ${{ github.ref == 'refs/heads/main' && 'github-pages' || '' }}  
+
       steps:
       - name: Passo 1 - Obter cópia do código-fonte do repositório
         uses: actions/checkout@v4
@@ -31,13 +39,15 @@ jobs:
           # executa o comando bundle install e armazena as gems instaladas automaticamente
           bundler-cache: true
         
-      - name: Passo 4 - Executar testes no navegador chrome em modo headless (2º plano) em um ambiente de produção e Gerar os resultados dos testes
+      - name: Passo 4 - Executar testes automatizados Web no navegador chrome em modo headless (2º plano) em um ambiente de produção e Gerar os resultados dos testes
         run: bundle exec cucumber -p ci
+        # possibilitar deploy/publicar no github pages inclusive quando há algum erro na execução dos testes 
+        continue-on-error: true        
 
       - name: Passo 5 - Armazenar os resultados dos testes em report html
-        uses: actions/upload-artifact@v4
         # expressão condicional para que sempre seja executado independentemente dos resultados dos steps anteriores
         if: ${{ always() }}
+        uses: actions/upload-artifact@v4
         with: 
             name: report_html_chrome
             path: ./reports/ruby-cucumber-web-front-serve-rest-report-html.html
@@ -45,15 +55,38 @@ jobs:
             retention-days: 30
             
       - name: Passo 6 - Armazenar os resultados dos testes em screenshots
-        uses: actions/upload-artifact@v4
         if: ${{ always() }}
+        uses: actions/upload-artifact@v4
         with: 
             name: screenshots_chrome
             path: ./reports/screenshots
             retention-days: 30
 
+      - name: Passo 7 - Configurar pages apenas na branch principal (main)
+        if: github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v4
+
+      - name: Passo 8 - Baixar report html armazenado no "Passo 5 - Armazenar os resultados dos testes em report html" apenas na branch principal (main)
+        if: github.ref == 'refs/heads/main'
+        uses: actions/download-artifact@v4
+        with: 
+          name: report_html_chrome
+          path: ./reports/ruby-cucumber-web-front-serve-rest-report-html.html
+
+      - name: Passo 9 - Armazenar pages apenas na branch principal (main)
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./reports/ruby-cucumber-web-front-serve-rest-report-html.html
+          retention-days: 30
+
+      - name: Passo 10 - Deploy/Publicar no Github Pages na "url" configurada automaticamente em "ruby-chrome > environment" apenas na branch principal (main)
+        if: github.ref == 'refs/heads/main'
+        id: deployment
+        uses: actions/deploy-pages@v4
+
   ruby-firefox:
-      # job "ruby-firefox" somente é executado se o job anterior "ruby-chrome" for executado com sucesso
+      # este job "ruby-firefox" é executado após o término do job anterior "ruby-chrome" 
       needs: ruby-chrome
       runs-on: ubuntu-22.04
 
@@ -72,20 +105,20 @@ jobs:
           ruby-version: '3.1.2'
           bundler-cache: true
         
-      - name: Passo 4 - Executar testes no navegador firefox em modo headless (2º plano) em um ambiente de produção e Gerar os resultados dos testes
+      - name: Passo 4 - Executar testes automatizados Web no navegador firefox em modo headless (2º plano) em um ambiente de produção e Gerar os resultados dos testes
         run: bundle exec cucumber -p ci_ff
 
       - name: Passo 5 - Armazenar os resultados dos testes em report html
-        uses: actions/upload-artifact@v4
         if: ${{ always() }}
+        uses: actions/upload-artifact@v4
         with: 
             name: report_html_firefox
             path: ./reports/ruby-cucumber-web-front-serve-rest-report-html.html
             retention-days: 30
             
       - name: Passo 6 - Armazenar os resultados dos testes em screenshots
-        uses: actions/upload-artifact@v4
         if: ${{ always() }}
+        uses: actions/upload-artifact@v4
         with: 
             name: screenshots_firefox
             path: ./reports/screenshots
